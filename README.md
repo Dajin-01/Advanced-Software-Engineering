@@ -36,8 +36,11 @@ End-users (customers) can efficiently book cleaning services, track appointments
 ## Team Roles
 
 Lin Pyae Htet - GUI, Front-end, Document
+
 Da Jin Kim - GUI, Front-end, Document
+
 Chen Xingjian - Back-end, Cloud service like AWS
+
 
 Checklist/TODOs: 
 * Update the following during each week prac session
