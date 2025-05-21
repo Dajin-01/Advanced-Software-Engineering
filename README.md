@@ -23,6 +23,22 @@ It is recommended to complete this assignment in a group of 2-4 students.
 
 
 # Project planning BEFORE iteration-1, (see chapters 1-3)
+
+## Project Overview
+
+A website for "MyClean": a platform focused on transforming how individual cleaners and cleaning companies manage bookings. The app will be free for customers, with revenue generated through service provider subscriptions or alternative monetization strategies.
+
+## Goals
+
+Service providers can use this website to manage bookings, track schedules, handle payments and streamline operations.
+End-users (customers) can efficiently book cleaning services, track appointments, and communicate with service providers.
+
+## Team Roles
+
+Lin Pyae Htet - GUI, Front-end, Document
+Da Jin Kim - GUI, Front-end, Document
+Chen Xingjian - Back-end, Cloud service like AWS
+
 Checklist/TODOs: 
 * Update the following during each week prac session
 * github entry timestamp is BEFORE the iteration-1
