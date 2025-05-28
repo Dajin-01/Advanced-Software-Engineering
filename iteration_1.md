@@ -10,6 +10,7 @@ Checklist:
 
 User stories or tasks (see chapter 4):
 1. Title: Edit Registration Details
+
    Priority: Medium
    Estimate: 1 day
    Description:
