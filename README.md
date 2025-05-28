@@ -20,6 +20,7 @@ It is recommended to complete this assignment in a group of 2-4 students.
 1. Dajin Kim
 2. Lin Pyae Htet
 3. Chen Xingjian
+4. Fan Yiqi
 
 
 # Project planning BEFORE iteration-1, (see chapters 1-3)
@@ -35,12 +36,13 @@ End-users (customers) can efficiently book cleaning services, track appointments
 
 ## Team Roles
 
-Lin Pyae Htet - GUI, Front-end, Document
+Lin Pyae Htet - GUI, Front-end
 
-Da Jin Kim - GUI, Front-end, Document
+Da Jin Kim - GUI, Front-end
 
 Chen Xingjian - Back-end, Cloud service like AWS
 
+Fan Yiqi - Design, Document
 
 Checklist/TODOs: 
 * Update the following during each week prac session
