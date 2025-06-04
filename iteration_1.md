@@ -11,7 +11,7 @@ Checklist:
 User stories or tasks (see chapter 4):
 1. Title: Edit Registration Details
 
-   Priority: Medium
+   Priority: High
 
    Estimate: 1 day
 
@@ -36,7 +36,7 @@ User stories or tasks (see chapter 4):
    eligibility, manage user records efficiently, and contact users if needed.
 4. Title: Track Gym Usage Statistics
 
-   Priority: Medium
+   Priority: Low
 
    Estimate: 3 days
 
@@ -44,7 +44,7 @@ User stories or tasks (see chapter 4):
    As an administrator, I want to view statistics on daily and weekly gym usage, such as the number of check-ins per time slot or per user, so that I can identify busy periods, monitor    attendance trends, and make data-driven decisions for staffing or facility improvements.
 5. Title: Get Basic Workout Recommendation
 
-   Priority: Medium
+   Priority: Low
 
    Estimate: 2 days
 
