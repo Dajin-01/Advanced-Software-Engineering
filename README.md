@@ -3,20 +3,12 @@ How to edit this: test-2025
 * Option-1 (tested and worked ok): PyCharm supports editing of these .md files. Then you need to push to the main branch or make a pull request.
 * Option-2 (tested ok): Edit and commit it directly on github. Then any local repo copies will need to be "updated".
 
-# cp3407-project-v2024 template [Delete or change to your team/project name before submitting]
 
 This a project assignment template for CP3407. 
 The following is the list of items, which are required to be completed.
 
-## How to submit [You may delete this before submitting]
-
-2. Add your instructor (JCU-Australia: jc138691@gmail.com Dmitry Konovalov) as a team member to view your project on github
-1. Submit link to your repository
-2. Download your github repository as a zip file and submit via LearnJCU.
-
 ## Team
 
-It is recommended to complete this assignment in a group of 2-4 students.
 1. Dajin Kim
 2. Lin Pyae Htet
 3. Chen Xingjian
@@ -27,12 +19,10 @@ It is recommended to complete this assignment in a group of 2-4 students.
 
 ## Project Overview
 
-A website for "MyClean": a platform focused on transforming how individual cleaners and cleaning companies manage bookings. The app will be free for customers, with revenue generated through service provider subscriptions or alternative monetization strategies.
+A website for "MyGym": A website for "MyGym”: A website for "MyGym”: a platform focused on providing gym services to JCU students while JCU staffs manage bookings and their memberships. Students can register for membership on the website and book their gym sessions conveniently without having to go to the university. The website will also feature an AI-powered trainer that will improve students' workout experience. The website will have revenue generated through gym membership subscriptions.
 
 ## Goals
-
-Service providers can use this website to manage bookings, track schedules, handle payments and streamline operations.
-End-users (customers) can efficiently book cleaning services, track appointments, and communicate with service providers.
+MyGym aims to revolutionize the gym experience for JCU students by providing a centralized online platform for booking facilities and accessing personalized fitness services. By leveraging AI technology, the platform will offer tailored exercise recommendations that align with each user’s goals and physical condition, helping them achieve better results safely and efficiently. MyGym will generate revenue through a subscription-based membership model, ensuring sustainability while maintaining a high level of service quality. 
 
 ## Team Roles
 
