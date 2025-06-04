@@ -1,6 +1,6 @@
 1. Title: Edit Registration Details
 
-Priority: Medium
+Priority: High
 
 Estimate: 1 day
 
@@ -28,7 +28,7 @@ eligibility, manage user records efficiently, and contact users if needed.
 
 4. Title: Track Gym Usage Statistics
 
-Priority: Medium
+Priority: Low
 
 Estimate: 3 days
 
@@ -37,7 +37,7 @@ Description: As an administrator, I want to view statistics on daily and weekly 
 
 5. Title: Get Basic Workout Recommendation
 
-Priority: Medium
+Priority: Low
 
 Estimate: 2 days
 
