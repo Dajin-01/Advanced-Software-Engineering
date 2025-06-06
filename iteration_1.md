@@ -52,11 +52,11 @@ User stories or tasks (see chapter 4):
    As a gym user, I want to receive a simple workout plan based on my selected goal (e.g. weight loss or muscle gain), so that I can follow a basic routine without needing expert help.
 
 In progress:
-* Task-2 (developer name or initials), date started
+* Task-1 Kim Dajin, date started: 06/06/2025 10:12
 * ...
 
 Completed:
-* Task-3 (developer name or initials), date completed
+* Task-1 Kim Dajin, date completed 06/06/2025 15:13
 * ...
 
 ### Burn Down for iteration-1 (see chapter 4):
