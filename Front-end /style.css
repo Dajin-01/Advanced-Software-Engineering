@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0883c4;
+  }
+  
+  .container {
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 30px;
+    border-bottom: 3px solid #e0e0e0;
+  }
+  
+  .logo-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 55px;
+    margin-right: 18px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    font-size: 1.15rem;
+    transition: color 0.2s;
+  }
+  
+  .nav a.active,
+  .nav a:hover {
+    color: #0883c4;
+    font-weight: bold;
+  }
+  
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    background: #0883c4;
+    min-height: 80vh;
+  }
+  
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 6vw;
+  }
+  
+  .left h1 {
+    font-size: 3rem; /* 조금 더 자연스러운 크기로 조정 */
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    text-align: left;
+    color: #fff; /* 배경색과 대비되는 글자색 */
+  }
+  
+  .desc {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    line-height: 1.5;
+    text-align: left;
+    color: #fff;
+    font-weight: 300;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+  
+  .login, .register {
+    padding: 18px 80px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .login {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .login:hover {
+    background: #fff;
+    color: #0883c4;
+  }
+  
+  .register {
+    background: #111;
+    color: #fff;
+    border: 2px solid #111;
+  }
+  
+  .register:hover {
+    background: #333;
+    border: 2px solid #333;
+  }
+  
+  .right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-right: 6vw;
+  }
+  
+  .gym-img {
+    width: 650px;
+    max-width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+  }
+  
+  @media (max-width: 1100px) {
+    .main {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0;
+    }
+    .left, .right {
+      padding: 0 5vw;
+      text-align: center;
+      margin-top: 0;
+    }
+    .right {
+      justify-content: center;
+      padding-right: 0;
+      margin-top: 40px;
+    }
+    .gym-img {
+      width: 90vw;
+      margin-left: 0;
+    }
+  }
