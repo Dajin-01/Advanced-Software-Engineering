@@ -67,12 +67,12 @@ body {
   }
   
   .left h1 {
-    font-size: 3rem; /* 조금 더 자연스러운 크기로 조정 */
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 30px;
     line-height: 1.2;
     text-align: left;
-    color: #fff; /* 배경색과 대비되는 글자색 */
+    color: #fff; 
   }
   
   .desc {
