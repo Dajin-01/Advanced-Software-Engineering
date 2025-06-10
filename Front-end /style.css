@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #0069B4;
+    background: #0883c4;
   }
   
   .container {
@@ -43,7 +43,7 @@ body {
   
   .nav a.active,
   .nav a:hover {
-    color: #0883c4;
+    color: #0069B4;
     font-weight: bold;
   }
   
@@ -53,7 +53,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 60px 0;
-    background: #0883c4;
+    background: #0069B4;
     min-height: 80vh;
   }
   
