@@ -33,11 +33,11 @@ body {
   }
   
   .nav a {
-    margin-left: 25px;
+    margin-left: 30px;
     text-decoration: none;
     color: #222;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     transition: color 0.2s;
   }
   
