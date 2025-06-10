@@ -36,17 +36,17 @@ body {
 }
 
 .nav a {
-    margin-left: 30px;
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
-    font-size: 1.15rem;
-    transition: color 0.2s;
-  }
+  margin-left: 30px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1.15rem;
+  transition: color 0.2s;
+}
 
 .nav a.active,
 .nav a:hover {
-  color: #0069B4;
+  color: #0883c4;
   font-weight: bold;
 }
 
@@ -110,9 +110,22 @@ body {
 }
 
 .login-button {
-  width: 80px;
+  margin-top: 30px;
+  padding: 14px 0;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 200px;
 }
-/* .login-form and .login-form input rules are now replaced by .form-fields above */
+
+.login-button:hover {
+  background: #333;
+}
 
 .booking-content {
   display: flex;
