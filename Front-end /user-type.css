@@ -1,0 +1,44 @@
+/* User Type Selection Page Styles */
+.user-type-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.user-type-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.user-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.user-type-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.user-type-card p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.user-type-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #3498db;
+}
