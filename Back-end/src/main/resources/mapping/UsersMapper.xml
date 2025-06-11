@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learning.gym_management.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.learning.gym_management.entity.UsersEntity">
+    <!--@mbg.generated-->
+    <!--@Table users-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="user_role" jdbcType="INTEGER" property="userRole" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_terms" jdbcType="INTEGER" property="userTerms" />
+    <result column="user_gender" jdbcType="INTEGER" property="userGender" />
+    <result column="user_birth" jdbcType="DATE" property="userBirth" />
+    <result column="user_tele" jdbcType="INTEGER" property="userTele" />
+    <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+    <result column="user_emergency_name" jdbcType="VARCHAR" property="userEmergencyName" />
+    <result column="user_emergency_number" jdbcType="INTEGER" property="userEmergencyNumber" />
+    <result column="create_name" jdbcType="VARCHAR" property="createName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_name" jdbcType="VARCHAR" property="updateName" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_role, user_name, user_terms, user_gender, user_birth, user_tele, user_email, 
+    user_emergency_name, user_emergency_number, create_name, create_time, update_name, 
+    update_time
+  </sql>
+</mapper>
