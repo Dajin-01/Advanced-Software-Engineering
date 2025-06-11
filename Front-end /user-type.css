@@ -8,6 +8,12 @@
   flex-wrap: wrap;
 }
 
+/* Description text styling */
+.left p {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
 .user-type-card {
   background: white;
   border-radius: 15px;
