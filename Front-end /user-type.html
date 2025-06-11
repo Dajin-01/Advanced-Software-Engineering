@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Type Selection - JCU Gym</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="user-type.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <img src="img/JamesCookLogo.jpg" alt="JCU Logo" class="logo"/>
+        <span class="title">Welcome to JCU Gym</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#">Book Sessions</a>
+        <a href="#">AI Trainer</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="left">
+        <h1>Select Your User Type</h1>
+        <p>Please choose whether you are a student or staff member to proceed with registration.</p>
+      </section>
+
+      <section class="right">
+        <div class="user-type-container">
+          <div class="user-type-card" onclick="location.href='student-register.html'">
+            <div class="icon">🎓</div>
+            <h3>Student</h3>
+            <p>I am a current JCU student and want to register for gym access.</p>
+          </div>
+
+          <div class="user-type-card" onclick="location.href='staff-register.html'">
+            <div class="icon">👨‍💼</div>
+            <h3>Staff</h3>
+            <p>I am a JCU staff member and want to register for gym access.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

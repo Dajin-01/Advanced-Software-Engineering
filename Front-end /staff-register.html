@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Staff Registration Form - JCU Gym</title>
+  <link rel="stylesheet" href="register.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <img src="img/JamesCookLogo.jpg" alt="JCU Logo" class="logo"/>
+        <span class="title">Welcome to JCU Gym</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#">Book Sessions</a>
+        <a href="#">AI Trainer</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="left">
+        <h1>Staff Registration Form</h1>
+        <p>Fill in your details to create a staff account.</p>
+      </section>
+      <section class="right">
+        <form class="reg-form" onsubmit="event.preventDefault(); location.href='terms.html';">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required />
+
+          <label for="staffid">Staff ID</label>
+          <input type="text" id="staffid" placeholder="Enter your staff ID" required />
+
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" placeholder="Enter your mobile number" required />
+
+          <label for="gender">Gender</label>
+          <select id="gender" required>
+            <option value="">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" required />
+
+          <label for="jcuemail">JCU Email</label>
+          <input type="email" id="jcuemail" placeholder="Enter your JCU email" required />
+
+          <label for="emergencyName">Emergency Contact Name</label>
+          <input type="text" id="emergencyName" placeholder="Enter emergency contact name" required />
+
+          <label for="emergencyNumber">Emergency Contact Number</label>
+          <input type="tel" id="emergencyNumber" placeholder="Enter emergency contact number" required />
+
+          <button type="submit" class="next-btn">Next</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
