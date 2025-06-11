@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learning.gym_management.mapper.SessionsMapper">
+  <resultMap id="BaseResultMap" type="com.learning.gym_management.entity.SessionsEntity">
+    <!--@mbg.generated-->
+    <!--@Table sessions-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="session" jdbcType="DATE" property="session" />
+    <result column="time_id" jdbcType="INTEGER" property="timeId" />
+    <result column="is_full" jdbcType="INTEGER" property="isFull" />
+    <result column="create_name" jdbcType="VARCHAR" property="createName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_name" jdbcType="VARCHAR" property="updateName" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `session`, time_id, is_full, create_name, create_time, update_name, update_time
+  </sql>
+</mapper>
