@@ -19,5 +19,6 @@ public class ScheduledTasks {
 
     @Scheduled(cron = "0 0 1 * * ?")
     public void updateUserStatusTask() {
+        registrationService.checkMembershipIsExpiry();
     }
 }
