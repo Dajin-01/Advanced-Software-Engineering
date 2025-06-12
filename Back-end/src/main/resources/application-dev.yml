@@ -1,5 +1,6 @@
 server:
   port: 8080
+  #address: 10.175.188.11
 
 spring:
   datasource:

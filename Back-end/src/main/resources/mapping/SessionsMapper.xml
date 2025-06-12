@@ -7,7 +7,6 @@
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="session" jdbcType="DATE" property="session" />
     <result column="time_id" jdbcType="INTEGER" property="timeId" />
-    <result column="is_full" jdbcType="INTEGER" property="isFull" />
     <result column="create_name" jdbcType="VARCHAR" property="createName" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_name" jdbcType="VARCHAR" property="updateName" />
@@ -17,4 +16,18 @@
     <!--@mbg.generated-->
     id, `session`, time_id, is_full, create_name, create_time, update_name, update_time
   </sql>
+
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into memberships
+    (id, user_id, `type`, expiry_date, is_expiry, create_name, create_time, update_name,
+    update_time)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.session,jdbcType=DATE}, #{item.timeId,jdbcType=VARCHAR},
+      #{item.createName,jdbcType=VARCHAR},
+      #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateName,jdbcType=VARCHAR}, #{item.updateTime,jdbcType=TIMESTAMP}
+      )
+    </foreach>
+  </insert>
 </mapper>

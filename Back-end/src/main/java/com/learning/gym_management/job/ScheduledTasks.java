@@ -17,7 +17,7 @@ public class ScheduledTasks {
     @Autowired
     private RegistrationService registrationService;
 
-    @Scheduled(cron = "0 0 1 * * ?")
+    @Scheduled(cron = "0 0 0 * * ?")
     public void updateUserStatusTask() {
         registrationService.checkMembershipIsExpiry();
     }

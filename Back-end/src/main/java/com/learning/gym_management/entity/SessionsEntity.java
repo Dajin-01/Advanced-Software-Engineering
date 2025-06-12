@@ -10,12 +10,6 @@ import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 
-/** 
- * @Author: Chen Xingjian
- * @CreateDate: 2025-06-09 21:04:28
- * @Version: 1.0.0
- * @Description: TODO
- **/
 @ApiModel(description="sessions")
 @Data
 @TableName(value = "sessions")
@@ -28,15 +22,11 @@ public class SessionsEntity implements Serializable {
 
     @TableField(value = "`session`")
     @ApiModelProperty(value="")
-    private Date session;
+    private String session;
 
     @TableField(value = "time_id")
     @ApiModelProperty(value="")
-    private Integer timeId;
-
-    @TableField(value = "is_full")
-    @ApiModelProperty(value="")
-    private Integer isFull;
+    private String timeId;
 
     @TableField(value = "create_name")
     @ApiModelProperty(value="")

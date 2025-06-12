@@ -1,8 +1,12 @@
 package com.learning.gym_management.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.learning.gym_management.entity.MembershipsEntity;
 import com.learning.gym_management.entity.SessionsEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /** 
  * @Author: Chen Xingjian
@@ -12,4 +16,7 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 @Mapper
 public interface SessionsMapper extends BaseMapper<SessionsEntity> {
+
+    int batchInsert(@Param("list") List<SessionsEntity> list);
+
 }
