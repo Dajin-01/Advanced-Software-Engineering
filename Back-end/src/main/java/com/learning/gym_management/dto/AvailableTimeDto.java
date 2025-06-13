@@ -1,5 +1,6 @@
 package com.learning.gym_management.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.Date;
@@ -13,8 +14,10 @@ import java.util.Date;
 @Data
 public class AvailableTimeDto {
 
+    @ApiModelProperty(value = "available date")
     private String availableTime;
 
+    @ApiModelProperty(value = "the session is available or not: 0-available, 1-unavailable")
     private int isAvailable;
 
 }

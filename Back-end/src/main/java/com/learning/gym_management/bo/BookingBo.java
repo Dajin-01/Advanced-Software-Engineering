@@ -1,5 +1,6 @@
 package com.learning.gym_management.bo;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,10 +15,13 @@ import java.util.List;
 @Data
 public class BookingBo {
 
+    @ApiModelProperty(value = "user id")
     private String userId;
 
+    @ApiModelProperty(value = "Booking date")
     private String bookingDate;
 
+    @ApiModelProperty(value = "timeIdList include all chosen time ID (subsessionId)")
     private List<String> timeIdList;
 
 }

@@ -1,5 +1,6 @@
 package com.learning.gym_management.bo;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -11,7 +12,8 @@ import lombok.Data;
 @Data
 public class UpdateMemberInfoBo {
 
-    private int userId;
+    @ApiModelProperty(value = "user id")
+    private String userId;
 
     private String userName;
 

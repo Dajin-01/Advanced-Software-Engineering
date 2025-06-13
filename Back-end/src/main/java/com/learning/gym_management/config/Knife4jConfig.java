@@ -37,8 +37,8 @@ public class Knife4jConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Gym Management 接口文档")
-                .description("使用Knife4j构建")
+                .title("Gym Management API Documentation")
+                .description("")
                 .version("1.0")
                 .build();
     }

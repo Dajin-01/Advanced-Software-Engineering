@@ -1,12 +1,30 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/jcu_gym?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
     username: root
-    password: 123456
+    password: cz519826
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+    #email config
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: chenxingjian.14905947@gmail.com
+      password: echkofnuisdvcngp
+      protocol: smtp
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
 
 mybatis-plus:
   # mapper.xml 的路径（如果有使用 XML 的话）
@@ -21,6 +39,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true  # 下划线转驼峰
 
+#log config
 logging:
   level:
     com.baomidou.mybatisplus: debug
