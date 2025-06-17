@@ -20,6 +20,10 @@ public class SessionsEntity implements Serializable {
     @ApiModelProperty(value="")
     private String id;
 
+    @TableField(value = "`user_id`")
+    @ApiModelProperty(value="")
+    private String userId;
+
     @TableField(value = "`session`")
     @ApiModelProperty(value="")
     private String session;

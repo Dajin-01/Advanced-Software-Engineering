@@ -58,6 +58,7 @@ public class RegistrationService {
 
         BeanUtils.copyProperties(createMembershipBo, usersEntity);
         usersEntity.setId(userId);
+        usersEntity.setJcuId(createMembershipBo.getJcuId());
         usersEntity.setUserTerms(createMembershipBo.getMemberType());
         usersEntity.setCreateName(TokenUtil.getNameByToken());
         usersEntity.setCreateTime(now);

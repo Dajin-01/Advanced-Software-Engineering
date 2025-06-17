@@ -5,6 +5,7 @@
     <!--@mbg.generated-->
     <!--@Table users-->
     <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="jcu_id" jdbcType="VARCHAR" property="jcuId" />
     <result column="user_role" jdbcType="INTEGER" property="userRole" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="user_terms" jdbcType="INTEGER" property="userTerms" />
@@ -21,8 +22,8 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, user_role, user_name, user_terms, user_gender, user_birth, user_tele, user_email, 
-    user_emergency_name, user_emergency_number, create_name, create_time, update_name, 
+    id, jcu_id, user_role, user_name, user_terms, user_gender, user_birth, user_tele, user_email,
+    user_emergency_name, user_emergency_number, create_name, create_time, update_name,
     update_time
   </sql>
 </mapper>

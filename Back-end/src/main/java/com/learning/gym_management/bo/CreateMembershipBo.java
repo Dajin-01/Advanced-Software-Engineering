@@ -16,6 +16,9 @@ import java.util.Date;
 @Data
 public class CreateMembershipBo {
 
+    @ApiModelProperty(value = "jcu id")
+    private String jcuId;
+
     @ApiModelProperty(value = "user role")
     private int userRole;
 

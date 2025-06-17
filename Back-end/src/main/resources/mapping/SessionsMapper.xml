@@ -5,6 +5,7 @@
     <!--@mbg.generated-->
     <!--@Table sessions-->
     <id column="id" jdbcType="VARCHAR" property="id" />
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="session" jdbcType="DATE" property="session" />
     <result column="time_id" jdbcType="INTEGER" property="timeId" />
     <result column="create_name" jdbcType="VARCHAR" property="createName" />
@@ -14,18 +15,16 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, `session`, time_id, is_full, create_name, create_time, update_name, update_time
+    id, user_id, `session`, time_id, create_name, create_time, update_name, update_time
   </sql>
 
   <insert id="batchInsert" parameterType="map">
-    <!--@mbg.generated-->
-    insert into memberships
-    (id, user_id, `type`, expiry_date, is_expiry, create_name, create_time, update_name,
-    update_time)
+    insert into sessions
+    (id, user_id, `session`, time_id, create_name, create_time, update_name, update_time)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.id,jdbcType=VARCHAR}, #{item.session,jdbcType=DATE}, #{item.timeId,jdbcType=VARCHAR},
-      #{item.createName,jdbcType=VARCHAR},
+      (#{item.id,jdbcType=VARCHAR}, #{item.session,jdbcType=DATE}, #{item.userId, jdbcType=VARCHAR}
+      #{item.timeId,jdbcType=VARCHAR}, #{item.createName,jdbcType=VARCHAR},
       #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateName,jdbcType=VARCHAR}, #{item.updateTime,jdbcType=TIMESTAMP}
       )
     </foreach>

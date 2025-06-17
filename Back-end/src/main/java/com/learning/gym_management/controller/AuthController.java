@@ -1,7 +1,12 @@
 package com.learning.gym_management.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.learning.gym_management.dto.LoginRequest;
 import com.learning.gym_management.dto.R;
+import com.learning.gym_management.entity.JcuAccountEntity;
+import com.learning.gym_management.entity.UsersEntity;
+import com.learning.gym_management.mapper.JcuAccountMapper;
+import com.learning.gym_management.mapper.UsersMapper;
 import com.learning.gym_management.util.JwtUtil;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,14 +37,32 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Autowired
+    private JcuAccountMapper jcuAccountMapper;
+
+    @Autowired
+    private UsersMapper usersMapper;
+
     @PostMapping("/login")
     public R login(@RequestBody LoginRequest req) {
+        List<JcuAccountEntity> jcuAccountEntityList = jcuAccountMapper.selectList(null);
+        JcuAccountEntity jcuAccountEntity = new JcuAccountEntity();
+        jcuAccountEntity.setJcuId(req.getUsername());
+        jcuAccountEntity.setJcuPassword(req.getPassword());
         // 1. 验证用户名和密码（此处用简单示例，实际应接数据库验证）
-        if (usersMap.containsKey(req.getUsername()) && usersMap.get(req.getUsername()).equals(req.getPassword())) {
+        if (jcuAccountEntityList.contains(jcuAccountEntity)) {
             // 2. 登录成功，生成 JWT
             String token = jwtUtil.generateToken(req.getUsername());
             Map<String, String> result = new HashMap<>();
             result.put("token", token);
+            result.put("jcuId", jcuAccountEntity.getJcuId());
+            UsersEntity usersEntity = usersMapper.selectOne(new QueryWrapper<UsersEntity>()
+                    .eq("jcu_id", req.getUsername()));
+            if (usersEntity != null) {
+                result.put("userId", usersEntity.getId());
+            }else {
+                result.put("userId", "");
+            }
             return R.ok(result);
         } else {
             return R.error("用户名或密码错误");

@@ -29,6 +29,10 @@ public class UsersEntity implements Serializable {
     @ApiModelProperty(value="")
     private String id;
 
+    @TableField(value = "jcu_id")
+    @ApiModelProperty(value="")
+    private String jcuId;
+
     /**
      * 0-student, 1-staff
      */
