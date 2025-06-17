@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/jcu_gym?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
-    username: root
-    password: cz519826
+    url: jdbc:mysql://172.17.0.1:3306/jcu_gym?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    username: gymuser
+    password: Cz519826!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   mvc:
