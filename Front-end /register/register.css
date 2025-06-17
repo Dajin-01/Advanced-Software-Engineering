@@ -97,7 +97,8 @@ body {
     color: #222;
   }
   
-  .reg-form input {
+  .reg-form input,
+  .reg-form select {
     padding: 12px;
     border: 1.5px solid #eee;
     border-radius: 6px;
@@ -108,8 +109,66 @@ body {
     transition: border 0.2s;
   }
   
-  .reg-form input:focus {
+  .reg-form input:focus,
+  .reg-form select:focus {
     border: 1.5px solid #0883c4;
+  }
+  
+  .reg-form input.error,
+  .reg-form select.error {
+    border: 1.5px solid #dc3545;
+  }
+  
+  .reg-form input.success,
+  .reg-form select.success {
+    border: 1.5px solid #28a745;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    min-height: 20px;
+    display: block;
+  }
+  
+  .error-message.success {
+    color: #28a745;
+  }
+  
+  /* Password strength indicator */
+  .password-strength {
+    margin-top: 5px;
+    font-size: 0.85rem;
+  }
+  
+  .password-strength.weak {
+    color: #dc3545;
+  }
+  
+  .password-strength.medium {
+    color: #ffc107;
+  }
+  
+  .password-strength.strong {
+    color: #28a745;
+  }
+  
+  /* Password match indicator */
+  .password-match {
+    margin-top: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .password-match.match {
+    color: #28a745;
+  }
+  
+  .password-match.no-match {
+    color: #dc3545;
   }
   
   .next-btn {
@@ -127,6 +186,11 @@ body {
   
   .next-btn:hover {
     background: #333;
+  }
+  
+  .next-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
   }
   
   @media (max-width: 900px) {
