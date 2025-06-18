@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings</title>
+  <link rel="stylesheet" href="../booking/booking.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <a href="index.html"><img src="../img/JamesCookLogo.jpg" alt="JCU Logo" class="logo"/></a>
+        <span class="title">Gym Slot Booking Form</span>
+      </div>
+      <nav class="nav">
+        <a href="../index/index.html">Home</a>
+        <a href="../booking/booking.html" class="active">Book Sessions</a>
+        <a href="../ai-trainer/ai-trainer.html">AI Trainer</a>
+        <a href="../contact/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="booking-content">
+      <div class="content-wrapper">
+        <div class="booking-header">
+          <h2>My Previous Bookings</h2>
+          <div class="booking-actions">
+            <button class="action-button">Add Booking</button>
+            <button class="action-button">Delete Booking</button>
+          </div>
+        </div>
+        <hr>
+        <table class="booking-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Booking Reference</th>
+              <th>User Name</th>
+              <th>Booking Date</th>
+              <th>Booking Time</th>
+              <th>Booked On</th>
+              <th>Booked by</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><strong>JYM2025100001</strong></td>
+              <td><em>Dajin Kim</em></td>
+              <td><strong>14-5-2025</strong></td>
+              <td><strong>09:00:00</strong></td>
+              <td><strong>2025-05-13 T14:53</strong></td>
+              <td><em>Dajin Kim</em></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><strong>JYM2025100002</strong></td>
+              <td><em>Dajin Kim</em></td>
+              <td><strong>30-5-2025</strong></td>
+              <td><strong>09:00:00</strong></td>
+              <td><strong>2025-05-29 T14:53</strong></td>
+              <td><em>Dajin Kim</em></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pagination">
+          <span>&lt;</span>
+          <span class="active-page">1</span>
+          <span>&gt;</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="booking.js"></script>
+</body>
+</html>
