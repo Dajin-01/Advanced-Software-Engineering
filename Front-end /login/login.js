@@ -24,6 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Redirect to booking page if validation passes
-        window.location.href = '../booking.html';
+        window.location.href = '../booking/booking.html';
     });
 });
