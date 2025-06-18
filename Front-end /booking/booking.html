@@ -23,13 +23,14 @@
 
     <main class="booking-content">
       <div class="content-wrapper">
-        <h2>My Previous Bookings</h2>
-        <hr>
-        <div class="booking-actions">
-          <button class="action-button">Add Booking</button>
-          <button class="action-button">Delete Selected Booking</button>
+        <div class="booking-header">
+          <h2>My Previous Bookings</h2>
+          <div class="booking-actions">
+            <button class="action-button">Add Booking</button>
+            <button class="action-button">Delete Booking</button>
+          </div>
         </div>
-
+        <hr>
         <table class="booking-table">
           <thead>
             <tr>
@@ -53,7 +54,7 @@
               <td><em>Dajin Kim</em></td>
             </tr>
             <tr>
-              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
               <td><strong>JYM2025100002</strong></td>
               <td><em>Dajin Kim</em></td>
               <td><strong>30-5-2025</strong></td>
@@ -72,5 +73,6 @@
       </div>
     </main>
   </div>
+  <script src="booking.js"></script>
 </body>
 </html>
