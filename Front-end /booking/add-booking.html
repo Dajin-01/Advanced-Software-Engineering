@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Booking</title>
+  <link rel="stylesheet" href="../booking/booking.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <a href="../index/index.html"><img src="../img/JamesCookLogo.jpg" alt="JCU Logo" class="logo"/></a>
+        <span class="title">Gym Slot Booking Form</span>
+      </div>
+      <nav class="nav">
+        <a href="../index/index.html">Home</a>
+        <a href="../booking/booking.html" class="active">Book Sessions</a>
+        <a href="../ai-trainer/ai-trainer.html">AI Trainer</a>
+        <a href="../contact/contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="booking-content">
+      <div class="content-wrapper">
+        <h2>Booking Details</h2>
+        <form id="bookingForm">
+          <div style="margin-bottom: 30px;">
+            <label style="font-weight: bold;">Pick a Date:</label>
+            <div class="date-options-group" id="date-options"></div>
+          </div>
+          <div id="timing-section" style="display: none;">
+            <label style="font-weight: bold;">Pick Timing:</label>
+            <div id="timing-options"></div>
+          </div>
+          <button type="submit" class="action-button book-now-btn" style="margin-top: 20px;">BOOK NOW</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="add-booking.js"></script>
+</body>
+</html> 
