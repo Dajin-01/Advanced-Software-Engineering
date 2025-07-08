@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
       userName: 'Dajin Kim',
       bookingDate: formatBookingDate(selectedDate.value),
       bookingTime: selectedTime.value,
-      bookedOn: new Date().toISOString().replace('T', ' ').substring(0, 19),
+      bookedOn: getSingaporeTimestamp(),
       bookedBy: 'Dajin Kim'
     };
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Generate booking reference
   function generateBookingReference() {
     const existingBookings = JSON.parse(sessionStorage.getItem('bookings') || '[]');
-    const baseNumber = 3 + existingBookings.length;
+    const baseNumber = 3 + existingBookings.length; 
     return `JYM202510000${baseNumber}`;
   }
 
@@ -128,5 +128,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
     return `${day}-${month}-${year}`;
+  }
+
+  // Helper to get Singapore timestamp in YYYY-MM-DD THH:MM format
+  function getSingaporeTimestamp() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${year}-${month}-${day} T${hours}:${minutes}`;
   }
 }); 
