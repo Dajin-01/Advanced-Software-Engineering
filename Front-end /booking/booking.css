@@ -132,6 +132,16 @@ body {
   display: block;
 }
 
+.option-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
 .book-now-btn {
   background: #5cb6f9;
   color: #fff;
