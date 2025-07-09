@@ -35,22 +35,18 @@ User stories or tasks (see chapter 4):
    As a gym user, I want to receive a simple workout plan based on my selected goal (e.g. weight loss or muscle gain), so that I can follow a basic routine without needing expert help.
 
 In progress:
-* Task-1 Kim Dajin, date started: 06/06/2025 10:12
-* Task-2 Lin Pyae Htet, date started: 08/06/2025 12:14
-* Task2-3 Kim Dajin, date started: 15/06/2025 11:14
+
 
 Completed:
-* Task-1 Kim Dajin, date completed 06/06/2025 15:13
-  Content: Implementing the user information modification form UI
-           Configuring fields for changing names, contact information, and passwords
-* Task-2 Lin Pyae Htet, date completed 14/06/2025 14:12
-  Content:
-* Task-3 Kim Dajin, date completed 20/06/2025 17:13
-  Content: 
+* Task-1 Kim Dajin(Front-end), date completed 06/06/2025 15:13
+* Task-1 Chen Xingjian(Back-end), date completed 10/06/2025 17:11
+* Task-2 Lin Pyae Htet(Front-end), date completed 14/06/2025 14:12
+* Task-3 Kim Dajin(Front-end), date completed 20/06/2025 17:13
+* Task-2 Chen Xingjian(Back-end), date completed 22/06/2025 19:48
 ### Burn Down for iteration-1 (see chapter 4):
 Update this at least once per week
-* 4 weeks left, xx days of estimated amount of work 
-* 2 weeks left, xx days
-* 1 weeks left, xx days
-* 0 weeks left, xx days
-* Actual Velocity: ?? 
+* 4 weeks left, 10 days of estimated amount of work 
+* 2 weeks left, 4 days
+* 1 weeks left, 0 days
+* 0 weeks left, 0 days
+* Actual Velocity: 4.0 days/week
