@@ -1,0 +1,27 @@
+# macOS 系统文件
+.DS_Store
+
+# IntelliJ / IDEA / WebStorm / PhpStorm 等 JetBrains 系列 IDE 生成文件
+.idea/
+*.iml
+
+# Maven 编译输出
+/target/
+
+# VSCode 设置（如果有人用 VSCode）
+.vscode/
+
+# 日志文件
+*.log
+
+# 本地环境配置（可选）
+*.local
+.env
+*.yml~
+
+# 临时文件
+*.swp
+*~
+
+# node_modules（如前端部分使用了 npm/yarn）
+node_modules/
