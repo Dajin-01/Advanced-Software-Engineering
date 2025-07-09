@@ -1,6 +1,7 @@
 package com.learning.gym_management.controller;
 
 import com.learning.gym_management.bo.BookingBo;
+import com.learning.gym_management.dto.AvailableHourDto;
 import com.learning.gym_management.dto.R;
 import com.learning.gym_management.service.BookingService;
 import io.swagger.annotations.Api;
@@ -10,6 +11,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @Author: Chen Xingjian
@@ -31,6 +34,12 @@ public class BookingController {
         return R.ok(bookingService.createNewBooking(bookingBo));
     }
 
+    @ApiOperation(value = "delete booking by id")
+    @GetMapping("/deleteBookingById")
+    public R deleteBookingById(@RequestParam @Validated String id){
+        return R.ok(bookingService.deleteBookingById(id));
+    }
+
     @ApiOperation(value = "List the available date")
     @GetMapping("/listAvailableDate")
     public R listAvailableDate(){
@@ -42,7 +51,7 @@ public class BookingController {
             @ApiImplicitParam(name = "date", value = "certain day", dataType = "String", required = true)
     })
     @GetMapping("/listAvailableHour")
-    public R listAvailableHour(@RequestParam @Validated String date){
+    public R<List<AvailableHourDto>> listAvailableHour(@RequestParam @Validated String date){
         return R.ok(bookingService.listAvailableHour(date));
     }
 }

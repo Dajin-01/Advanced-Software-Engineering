@@ -1,6 +1,7 @@
 package com.learning.gym_management.service;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.learning.gym_management.bo.BookingBo;
 import com.learning.gym_management.dto.AvailableHourDto;
@@ -59,39 +60,31 @@ public class BookingService {
         if (count > 0) {
             return R.ok("This date has already been booked");
         }
-        if (!bookingBo.getTimeIdList().isEmpty()){
-            for (int i = 0; i < bookingBo.getTimeIdList().size(); i++) {
-                SessionsEntity sessionsEntity = new SessionsEntity();
-                sessionsEntity.setId(UUIDUtil.uuid32());
-                sessionsEntity.setUserId(usersEntity.getId());
-                sessionsEntity.setSession(bookingBo.getBookingDate());
-                sessionsEntity.setTimeId(bookingBo.getTimeIdList().get(i));
-                sessionsEntity.setCreateName(TokenUtil.getNameByToken());
-                sessionsEntity.setCreateTime(date);
-                sessionsEntityList.add(sessionsEntity);
-            }
-        }
-        if (!sessionsEntityList.isEmpty()){
-            result = sessionsMapper.batchInsert(sessionsEntityList);
+
+        // insert booking data
+        SessionsEntity sessionsEntity = new SessionsEntity();
+        sessionsEntity.setId(UUIDUtil.uuid32());
+        sessionsEntity.setUserId(usersEntity.getId());
+        sessionsEntity.setSession(bookingBo.getBookingDate());
+        sessionsEntity.setTimeId(bookingBo.getChosenTimeId());
+        sessionsEntity.setCreateName(TokenUtil.getNameByToken());
+        sessionsEntity.setCreateTime(date);
+        if (!ObjectUtil.isEmpty(sessionsEntity)){
+            result = sessionsMapper.insert(sessionsEntity);
         }
 
+        // create email content
         if (result > 0) {
-            StringBuilder stringBuilder = new StringBuilder();
-            List<SubsessionsEntity> subsessionsEntityList = subsessionsMapper.selectList(null);
-            Map<String, List<SubsessionsEntity>> map = subsessionsEntityList.stream()
-                    .collect(Collectors.groupingBy(SubsessionsEntity::getId));
-            for (int i = 0; i < subsessionsEntityList.size(); i++) {
-                stringBuilder.append(subsessionsEntityList.get(i).getSubsession());
-                if (i != subsessionsEntityList.size() - 1) {
-                    stringBuilder.append(",");
-                }
-            }
+            SubsessionsEntity subsessionsEntity = new SubsessionsEntity();
+            subsessionsEntity = subsessionsMapper.selectOne(new QueryWrapper<SubsessionsEntity>()
+                    .eq("id", bookingBo.getChosenTimeId()));
 
             try {
                 // send confirmation email
                 EmailUtil.sendPlainTextEmail(new ArrayList<>(Arrays.asList(usersEntity.getUserEmail())),
                         "MyGym Booking Confirmed",
-                        createEmailContent(usersEntity.getUserName(), stringBuilder.toString()));
+                        createEmailContent(usersEntity.getUserName(), bookingBo.getBookingDate()
+                        , subsessionsEntity.getSubsession()));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -99,46 +92,37 @@ public class BookingService {
         return R.ok(result);
     }
 
-    public String createEmailContent(String userName, String date){
+    public String createEmailContent(String userName, String date, String time){
         StringBuilder emailContent = new StringBuilder();
         emailContent.append("Hi ").append(userName).append(",\n").append("\n")
                 .append("Thank you for using the gym booking system. Here are the time slots you have booked:\n")
-                .append("\n").append("Date: \n").append(userName).append("\n")
-                .append("\n").append("Time: \n").append(date).append("\n")
+                .append("\n").append("Date: \n").append(date).append("\n")
+                .append("\n").append("Time: \n").append(time).append("\n")
                 .append("To report any problem, please email to campusactivities-singapore@jcu.edu.au or look for us at C1-09 Campus Activities Office during office hours. Thank you.");
         return emailContent.toString();
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public int deleteBookingById(String id){
+        int result = 0;
+        result = sessionsMapper.deleteById(id);
+        return result;
     }
 
     /**
      *
      * @return
      */
-    public List<AvailableTimeDto> listAvailableDate() {
-        List<String> dateList = listNextSevenDays(new Date());
-        List<AvailableTimeDto> result = new ArrayList<>();
-        List<SessionsEntity> sessionsEntityList = sessionsMapper.selectList(null);
-        Map<String, List<SessionsEntity>> map = new HashMap<>();
-        if (!sessionsEntityList.isEmpty()){
-            map = sessionsEntityList.stream().collect(Collectors
-                    .groupingBy(SessionsEntity::getSession));
+    public List<Map<String, String>> listAvailableDate() {
+        List<Map<String, String>> availableDateList = new ArrayList<>();
+        List<String> dayList = new ArrayList<>();
+        dayList = listNextSevenDays(new Date());
+        for (String day : dayList) {
+            Map<String, String> map = new HashMap<>();
+            map.put("date", day);
+            availableDateList.add(map);
         }
-        for (String date : dateList) {
-            AvailableTimeDto availableTimeDto = new AvailableTimeDto();
-            availableTimeDto.setAvailableTime(date);
-            if (!map.isEmpty()){
-                int count = map.get(date).size();
-                // all slot in the days is booked
-                if (count < 54) {
-                    availableTimeDto.setIsAvailable(0);
-                }else {
-                    availableTimeDto.setIsAvailable(1);
-                }
-            } else {
-                availableTimeDto.setIsAvailable(0);
-            }
-            result.add(availableTimeDto);
-        }
-        return result;
+        return availableDateList;
     }
 
     /**

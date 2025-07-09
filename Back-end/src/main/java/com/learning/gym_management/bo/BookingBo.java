@@ -21,7 +21,7 @@ public class BookingBo {
     @ApiModelProperty(value = "Booking date")
     private String bookingDate;
 
-    @ApiModelProperty(value = "timeIdList include all chosen time ID (subsessionId)")
-    private List<String> timeIdList;
+    @ApiModelProperty(value = "chosen time ID (subsessionId)")
+    private String chosenTimeId;
 
 }
