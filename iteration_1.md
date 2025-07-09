@@ -25,24 +25,7 @@ User stories or tasks (see chapter 4):
 
    Description:
    As a gym customer, I want to book gym sessions online so that I can reserve my preferred time slot, avoid overcrowding, and plan my day without visiting or calling the gym.
-3. Title: Monitor User Registrations
-
-   Priority: Medium
-
-   Estimate: 2 days
-
-   Description:
-   As an administrator, I want to view a list of all registered gym users, including their names, contact information, and registration dates, so that I can verify membership     
-   eligibility, manage user records efficiently, and contact users if needed.
-4. Title: Track Gym Usage Statistics
-
-   Priority: Low
-
-   Estimate: 3 days
-
-   Description:
-   As an administrator, I want to view statistics on daily and weekly gym usage, such as the number of check-ins per time slot or per user, so that I can identify busy periods, monitor    attendance trends, and make data-driven decisions for staffing or facility improvements.
-5. Title: Get Basic Workout Recommendation
+3. Title: Get Basic Workout Recommendation
 
    Priority: Low
 
@@ -53,12 +36,17 @@ User stories or tasks (see chapter 4):
 
 In progress:
 * Task-1 Kim Dajin, date started: 06/06/2025 10:12
-* ...
+* Task-2 Lin Pyae Htet, date started: 08/06/2025 12:14
+* Task2-3 Kim Dajin, date started: 15/06/2025 11:14
 
 Completed:
 * Task-1 Kim Dajin, date completed 06/06/2025 15:13
-* ...
-
+  Content: Implementing the user information modification form UI
+           Configuring fields for changing names, contact information, and passwords
+* Task-2 Lin Pyae Htet, date completed 14/06/2025 14:12
+  Content:
+* Task-3 Kim Dajin, date completed 20/06/2025 17:13
+  Content: 
 ### Burn Down for iteration-1 (see chapter 4):
 Update this at least once per week
 * 4 weeks left, xx days of estimated amount of work 
