@@ -1,29 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const idInput = document.getElementById('student-id');
+    const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
-    const loginButton = document.querySelector('.login-button');
+    const loginForm = document.getElementById('login-form');
 
-    // Enforce numeric input and max length
-    idInput.maxLength = 8;
-    idInput.pattern = '[0-9]{8}';
-    idInput.addEventListener('input', function(e) {
-        this.value = this.value.replace(/[^0-9]/g, '');
-    });
-
-    loginButton.addEventListener('click', function(e) {
+    loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        if (!idInput.value || idInput.value.length !== 8) {
-            alert('Please enter a valid 8-digit ID');
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        // 이메일 형식 검사
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert('Enter right email.');
             return;
         }
 
-        if (!passwordInput.value) {
-            alert('Please enter your password');
+        if (!password) {
+            alert('Enter your password.');
             return;
         }
 
-        // Redirect to booking page if validation passes
+        // 유효성 통과 시 이동
         window.location.href = '../booking/booking.html';
     });
 });

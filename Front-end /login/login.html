@@ -15,7 +15,7 @@
       </div>
       <nav class="nav">
         <a href="../index/index.html">Home</a>
-        <a href="book-sessions.html" class="active">Book Sessions</a>
+        <a href="../login/login.html" class="active">Book Sessions</a>
         <a href="../ai-trainer/ai-trainer.html">AI Trainer</a>
         <a href="../contact/contact.html">Contact</a>
       </nav>
@@ -37,9 +37,15 @@
           </p>
         </div>
         <div class="form-fields">
-          <input type="text" id="student-id" placeholder="Student ID" required />
-          <input type="password" id="password" placeholder="Enter your password" required />
-          <button type="submit" class="login-button">Login</button>
+          <form id="login-form">
+            <div>
+              <input type="email" id="email" placeholder="Enter your Email" required />
+            </div>
+            <div>
+              <input type="password" id="password" placeholder="Enter your password" required />
+            </div>
+            <button type="submit" class="login-button">Login</button>
+          </form>
         </div>
       </div>
     </main>

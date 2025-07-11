@@ -46,7 +46,7 @@ body {
 
 .nav a.active,
 .nav a:hover {
-  color: #0883c4;
+  color: #0069B4;
   font-weight: bold;
 }
 
@@ -121,4 +121,58 @@ body {
 .active-page {
   font-weight: bold;
   border-bottom: 2px solid #333;
+}
+
+.date-options-group {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.date-options-group label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.option-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.book-now-btn {
+  background: #5cb6f9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.book-now-btn:hover {
+  background: #3498db;
+}
+
+.booking-details-box {
+  border: 2px solid #444;
+  border-radius: 10px;
+  padding: 32px 36px 28px 36px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.booking-details-title {
+  background: #f2f2f2;
+  padding: 16px 20px 12px 20px;
+  margin: -32px -36px 24px -36px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-bottom: 2px solid #e0e0e0;
+  color: #888;
 }
