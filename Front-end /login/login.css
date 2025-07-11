@@ -140,6 +140,7 @@ body {
   cursor: pointer;
   transition: background 0.2s;
   width: 200px;
+  margin-left: 120px;
 }
 
 .login-button:hover {
