@@ -10,7 +10,7 @@
   <div class="container">
     <header class="header">
       <div class="logo-title">
-        <img src="../img/JamesCookLogo.jpg" alt="JCU Logo" class="logo"/>
+        <a href="../index/index.html"><img src="../img/JamesCookLogo.jpg" alt="JCU Logo" class="logo"/></a>
         <span class="title">Welcome to MyGym</span>
       </div>
       <nav class="nav">
@@ -35,10 +35,18 @@
           <input type="text" id="staffid" placeholder="Enter your staff ID" required />
           <span class="error-message" id="staffidError"></span>
 
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <span class="error-message" id="passwordError"></span>
+
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm your password" required />
+          <span class="error-message" id="confirmPasswordError"></span>
+
           <label for="email">Email</label>
           <input type="email" id="email" placeholder="Enter your email address" required />
           <span class="error-message" id="emailError"></span>
-          
+
           <label for="mobile">Mobile Number</label>
           <input type="tel" id="mobile" placeholder="Enter your mobile number" required />
           <span class="error-message" id="mobileError"></span>
