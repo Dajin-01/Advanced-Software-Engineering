@@ -29,9 +29,9 @@ public class MembershipsEntity implements Serializable {
     @ApiModelProperty(value = "")
     private String id;
 
-    @TableField(value = "user_id")
+    @TableField(value = "account_id")
     @ApiModelProperty(value = "")
-    private String userId;
+    private String accountId;
 
     @TableField(value = "`type`")
     @ApiModelProperty(value = "")

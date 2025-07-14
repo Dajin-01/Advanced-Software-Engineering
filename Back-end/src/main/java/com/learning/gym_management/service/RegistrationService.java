@@ -1,9 +1,13 @@
 package com.learning.gym_management.service;
 
 import cn.hutool.core.date.DateUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.learning.gym_management.bo.CreateMembershipBo;
+import com.learning.gym_management.dto.R;
+import com.learning.gym_management.entity.JcuAccountEntity;
 import com.learning.gym_management.entity.MembershipsEntity;
 import com.learning.gym_management.entity.UsersEntity;
+import com.learning.gym_management.mapper.JcuAccountMapper;
 import com.learning.gym_management.mapper.MembershipsMapper;
 import com.learning.gym_management.mapper.UsersMapper;
 import com.learning.gym_management.util.DateFormatUtil;
@@ -37,6 +41,9 @@ public class RegistrationService {
     @Autowired
     private MembershipsMapper membershipsMapper;
 
+    @Autowired
+    private JcuAccountMapper jcuAccountMapper;
+
     private final String emailSubject = "Congratulations on Your Membership Approval!";
 
 
@@ -46,42 +53,58 @@ public class RegistrationService {
      * @return
      */
     @Transactional(rollbackFor = Exception.class)
-    public int createMemberhip(CreateMembershipBo createMembershipBo) throws MessagingException, IOException {
+    public R createMemberhip(CreateMembershipBo createMembershipBo) throws MessagingException, IOException {
         int i = 0;
-        //
         String userId = UUIDUtil.uuid32();
         String membershipId = UUIDUtil.uuid32();
         Date now = new Date();
-        //
+        // new entity
         UsersEntity usersEntity = new UsersEntity();
         MembershipsEntity membershipsEntity = new MembershipsEntity();
+        JcuAccountEntity jcuAccountEntity = new JcuAccountEntity();
 
-        BeanUtils.copyProperties(createMembershipBo, usersEntity);
+        long count = jcuAccountMapper.selectCount(new QueryWrapper<JcuAccountEntity>()
+                .eq("account_id", createMembershipBo.getEmail()));
+        if (count > 0) {
+            return R.error("Email Already Exists");
+        }
+        // user's data
         usersEntity.setId(userId);
-        usersEntity.setJcuId(createMembershipBo.getJcuId());
-        usersEntity.setUserTerms(createMembershipBo.getMemberType());
+        usersEntity.setUserRole(createMembershipBo.getUserRole());
+        usersEntity.setUserName(createMembershipBo.getFullName());
+        usersEntity.setUserGender(createMembershipBo.getGender());
+        usersEntity.setUserBirth(createMembershipBo.getBirthdate());
+        usersEntity.setUserEmail(createMembershipBo.getEmail());
+        usersEntity.setUserTele(createMembershipBo.getMobileNumber());
+        usersEntity.setUserEmergencyName(createMembershipBo.getUserEmergencyName());
+        usersEntity.setUserEmergencyNumber(createMembershipBo.getUserEmergencyNumber());
         usersEntity.setCreateName(TokenUtil.getNameByToken());
         usersEntity.setCreateTime(now);
 
-        //
+        // new membership data
         membershipsEntity.setId(membershipId);
-        membershipsEntity.setUserId(userId);
-        membershipsEntity.setType(createMembershipBo.getMemberType());
-        membershipsEntity.setExpiryDate(getExpiryDate(createMembershipBo.getMemberType(), now));
-        //new membership won't be expired
-        membershipsEntity.setIsExpiry(0);
+        membershipsEntity.setAccountId(createMembershipBo.getEmail());
+        membershipsEntity.setType(createMembershipBo.getTerm());
+        membershipsEntity.setExpiryDate(getExpiryDate(createMembershipBo.getTerm(), now));
+        membershipsEntity.setIsExpiry(0); // new membership won't be expired
         membershipsEntity.setCreateTime(now);
         membershipsEntity.setCreateName(TokenUtil.getNameByToken());
+
+        // new account data
+        jcuAccountEntity.setAccountId(createMembershipBo.getEmail());
+        jcuAccountEntity.setAccountPassword(createMembershipBo.getPassword());
 
         i = usersMapper.insert(usersEntity);
         if (i > 0) {
             // insert membership info into database
             membershipsMapper.insert(membershipsEntity);
+            // insert user's account into database
+            jcuAccountMapper.insert(jcuAccountEntity);
             // send confirmation email
-            EmailUtil.sendPlainTextEmail(new ArrayList<>(Arrays.asList(createMembershipBo.getUserEmail())),
-                    emailSubject, createEmailContent(createMembershipBo.getUserName()));
+            EmailUtil.sendPlainTextEmail(new ArrayList<>(Arrays.asList(createMembershipBo.getEmail())),
+                    emailSubject, createEmailContent(createMembershipBo.getFullName()));
         }
-        return i;
+        return R.ok(i);
     }
 
     /**

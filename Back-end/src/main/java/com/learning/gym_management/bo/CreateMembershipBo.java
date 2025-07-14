@@ -16,28 +16,28 @@ import java.util.Date;
 @Data
 public class CreateMembershipBo {
 
-    @ApiModelProperty(value = "jcu id")
-    private String jcuId;
-
-    @ApiModelProperty(value = "user role")
+    @ApiModelProperty(value = "user's role: 0-student 1-employed")
     private int userRole;
 
-    @ApiModelProperty(value = "user name")
-    private String userName;
+    @ApiModelProperty(value = "user's full name")
+    private String fullName;
 
-    @ApiModelProperty(value = "user gender")
-    private int userGender;
+    @ApiModelProperty(value = "account password")
+    private String password;
+
+    @ApiModelProperty(value = "user's email address")
+    private String email;
+
+    @ApiModelProperty(value = "user's connect number")
+    private int mobileNumber;
+
+    @ApiModelProperty(value = "user's gender: 0-male 1-female 2-other 3-unspecified")
+    private int gender;
 
     @ApiModelProperty(value = "user birthday")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+16")
-    private Date userBirth;
-
-    @ApiModelProperty(value = "user telephone number")
-    private int userTele;
-
-    @ApiModelProperty(value = "user email")
-    private String userEmail;
+    private Date birthdate;
 
     @ApiModelProperty(value = "user emergency contact name")
     private String userEmergencyName;
@@ -45,7 +45,13 @@ public class CreateMembershipBo {
     @ApiModelProperty(value = "user emergency contact number")
     private int userEmergencyNumber;
 
-    @ApiModelProperty(value = "user membership type")
-    private int memberType;
+    @ApiModelProperty(value = "term")
+    private int term;
+
+    @ApiModelProperty(value = "fee")
+    private int fee;
+
+    @ApiModelProperty(value = "payment type")
+    private int paymentType;
 
 }

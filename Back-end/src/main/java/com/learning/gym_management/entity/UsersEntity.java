@@ -29,10 +29,6 @@ public class UsersEntity implements Serializable {
     @ApiModelProperty(value="")
     private String id;
 
-    @TableField(value = "jcu_id")
-    @ApiModelProperty(value="")
-    private String jcuId;
-
     /**
      * 0-student, 1-staff
      */
@@ -43,13 +39,6 @@ public class UsersEntity implements Serializable {
     @TableField(value = "user_name")
     @ApiModelProperty(value="")
     private String userName;
-
-    /**
-     * 0-trial, 1-one trimester, 2-three trimester
-     */
-    @TableField(value = "user_terms")
-    @ApiModelProperty(value="0-trial, 1-one trimester, 2-three trimester")
-    private Integer userTerms;
 
     /**
      * 0-male, 1-female
