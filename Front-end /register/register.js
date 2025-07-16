@@ -6,8 +6,6 @@ const patterns = {
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   password: /^.{6,}$/, // Minimum 6 characters, any type
   mobile: /^[\+]?[1-9][\d]{0,15}$/,
-  studentId: /^[A-Za-z0-9]{5,15}$/,
-  staffId: /^[A-Za-z0-9]{5,15}$/
 };
 
 // Error messages
@@ -17,8 +15,6 @@ const errorMessages = {
   password: 'Password must be at least 6 characters long',
   confirmPassword: 'Passwords do not match',
   mobile: 'Please enter a valid mobile number',
-  studentId: 'Student ID must be 5-15 characters long',
-  staffId: 'Staff ID must be 5-15 characters long',
   required: 'This field is required',
   age: 'You must be at least 16 years old to register'
 };
@@ -47,12 +43,6 @@ function validateForm(event) {
     emergencyNumber: form.querySelector('#emergencyNumber').value.trim()
   };
   
-  // Add ID field based on form type
-  if (isStudent) {
-    formData.id = form.querySelector('#studentid').value.trim();
-  } else {
-    formData.id = form.querySelector('#staffid').value.trim();
-  }
   
   let isValid = true;
   
@@ -67,11 +57,7 @@ function validateForm(event) {
   isValid = validateField('emergencyName', formData.emergencyName, patterns.name, errorMessages.name) && isValid;
   isValid = validateField('emergencyNumber', formData.emergencyNumber, patterns.mobile, errorMessages.mobile) && isValid;
   
-  // Validate ID field
-  const idPattern = isStudent ? patterns.studentId : patterns.staffId;
-  const idErrorMessage = isStudent ? errorMessages.studentId : errorMessages.staffId;
-  isValid = validateField(isStudent ? 'studentid' : 'staffid', formData.id, idPattern, idErrorMessage) && isValid;
-  
+ 
   if (isValid) {
     // Store form data (in a real app, this would be sent to server)
     console.log('Form data:', formData);
@@ -134,9 +120,9 @@ function validateDateOfBirth(dob) {
   
   const birthDate = new Date(dob);
   const today = new Date();
-  const age = today.getFullYear() - birthDate.getFullYear();
+  let age = today.getFullYear() - birthDate.getFullYear();
   const monthDiff = today.getMonth() - birthDate.getMonth();
-  
+
   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
     age--;
   }
@@ -300,12 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'emergencyNumber':
           validateField(fieldName, value, patterns.mobile, errorMessages.mobile);
           break;
-        case 'studentid':
-          validateField(fieldName, value, patterns.studentId, errorMessages.studentId);
-          break;
-        case 'staffid':
-          validateField(fieldName, value, patterns.staffId, errorMessages.staffId);
-          break;
+
         case 'gender':
           validateField(fieldName, value, null, 'Please select your gender');
           break;
