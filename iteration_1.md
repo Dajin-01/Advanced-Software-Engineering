@@ -45,8 +45,8 @@ Completed:
 * Task-2 Chen Xingjian(Back-end), date completed 22/06/2025 19:48
 ### Burn Down for iteration-1 (see chapter 4):
 Update this at least once per week
-* 4 weeks left, 10 days of estimated amount of work 
+* 4 weeks left, 8 days of estimated amount of work 
 * 2 weeks left, 4 days
 * 1 weeks left, 0 days
 * 0 weeks left, 0 days
-* Actual Velocity: 4.0 days/week
+* Actual Velocity: 3.2 days/week
