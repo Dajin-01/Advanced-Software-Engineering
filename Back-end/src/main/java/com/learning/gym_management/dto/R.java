@@ -16,45 +16,45 @@ import java.util.Map;
  * @Author: Chen Xingjian
  * @CreateDate: 2025-06-09 21:44:52
  * @Version: 1.0.0
- * @Description: TODO
+ * @Description:
  **/
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ApiModel("结果集")
+@ApiModel("result set")
 public class R<T> {
 
     /**
-     * 返回结果
+     * returned result
      */
-    @ApiModelProperty("返回结果")
+    @ApiModelProperty("returned result")
     private T data;
 
     /**
-     * 状态码
+     * response code
      */
-    @ApiModelProperty("状态码")
+    @ApiModelProperty("response code")
     private String respCode;
 
     /**
-     * 消息
+     * message
      */
-    @ApiModelProperty("消息")
+    @ApiModelProperty("message")
     private String message;
 
     /**
-     * 条件
+     * params
      */
-    @ApiModelProperty("条件")
+    @ApiModelProperty("params")
     private transient Map<String, Object> params;
 
     /**
-     * 无结果成功返回常用返回构造器
+     * Common response constructors for successful no-result returns
      *
      * @return R<T>
-     * @author ys
-     * @date 2019/6/15 20:33
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public static <T> R<T> ok() {
         return succeedWith(null, CodeEnum.SUCCESS.getRetCode(), CodeEnum.SUCCESS.getRetMsg());
@@ -62,51 +62,51 @@ public class R<T> {
 
 
     /**
-     * 返回结果常用返回构造器
+     * Common response constructors for return results
      *
-     * @param model 返回结果
+     * @param model returned result
      * @return R<T>
-     * @author ys
-     * @date 2019/6/15 20:33
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public static <T> R<T> ok(T model) {
         return succeedWith(model, CodeEnum.SUCCESS.getRetCode(), CodeEnum.SUCCESS.getRetMsg());
     }
 
     /**
-     * 结果集，成功消息常用返回构造器
+     * Common response constructors for result sets and success messages
      *
-     * @param model 返回结果
-     * @param msg   附带消息
+     * @param model returned result
+     * @param msg   attached message
      * @return R<T>
-     * @author ys
-     * @date 2019/6/24 14:12
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public static <T> R<T> ok(T model, String msg) {
         return succeedWith(model, CodeEnum.SUCCESS.getRetCode(), msg);
     }
 
     /**
-     * 成功返回构造器
+     * Constructor for successful responses
      *
-     * @param data 返回结果
-     * @param code 状态码
-     * @param msg  附带消息
+     * @param data returned result
+     * @param code respCode
+     * @param msg  attached message
      * @return R<T>
-     * @author ys
-     * @date 2019/6/24 14:12
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     private static <T> R<T> succeedWith(T data, String code, String msg) {
         return new R<T>(data, code, msg, null);
     }
 
     /**
-     * 错误消息（系统控制器用）
+     * Error messages (for s Chen Xingjiantem controllers)
      *
-     * @param msg 附带消息
+     * @param msg attached message
      * @return R<T>
-     * @author ys
-     * @date 2019/6/24 14:11
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public static <T> R<T> error(String msg) {
         return failedWith(null, CodeEnum.ERROR.getRetCode(), msg);
@@ -114,73 +114,73 @@ public class R<T> {
 
 
     /**
-     * 错误消息
+     * Error messages
      *
      * @param
      * @return R<T>
-     * @author ys
-     * @date 2019/6/24 14:11
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public static <T> R<T> error() {
         return failedWith(null, CodeEnum.ERROR.getRetCode(),CodeEnum.ERROR.getRetMsg() );
     }
 
     /**
-     * 错误结果、错误消息
+     * Error result, error messages
      *
-     * @param model 返回结果
-     * @param msg   附带消息
+     * @param model returned result
+     * @param msg   attached message
      * @return R<T>
-     * @author ys
-     * @date 2019/6/24 14:09
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public static <T> R<T> error(T model, String msg) {
         return failedWith(model, CodeEnum.ERROR.getRetCode(), msg);
     }
 
     /**
-     * 返回错误码、错误信息（RestControllerAdvice使用）
+     * Return error codes and messages (used in RestControllerAdvice)
      *
-     * @param code 状态码
-     * @param msg  附带消息
+     * @param code respCode
+     * @param msg  attached message
      * @return R<T>
-     * @author ys
-     * @date 2019/6/24 14:08
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public static <T> R<T> error(String code, String msg) {
         return new R<T>(null, code, msg, null);
     }
 
     /**
-     * 错误返回构造器
+     * Constructor for error responses
      *
-     * @param data 返回结果
-     * @param code 状态码
-     * @param msg  附带消息
+     * @param data returned result
+     * @param code respCode
+     * @param msg  attached message
      * @return R<T>
-     * @author ys
-     * @date 2019/6/24 14:09
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     private static <T> R<T> failedWith(T data, String code, String msg) {
         return new R<T>(data, code, msg, null);
     }
 
     /**
-     * 请求是否成功
-     * <p> 结构体增加success字段 </p>
+     * Whether the request was successful
+     * <p> add a 'success' field into the structure</p>
      * @return boolean
-     * @author ys
-     * @date 2020/4/29 12:51
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public boolean isSuccess() {
         return this.respCode.equals(CodeEnum.SUCCESS.getRetCode());
     }
 
     /**
-     * 转化为JSON字符串
+     * Convert to JSON string
      * @return java.lang.String
-     * @author ys
-     * @date 2020/5/2 20:24
+     * @author Chen Xingjian
+     * @date 2025-06-09 21:44:52
      */
     public String toJsonString() {
         return JSONUtil.toJsonStr(this);

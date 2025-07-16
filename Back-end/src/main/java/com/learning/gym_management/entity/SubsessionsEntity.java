@@ -9,12 +9,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Data;
 
-/** 
- * @Author: Chen Xingjian
- * @CreateDate: 2025-06-09 21:04:28
- * @Version: 1.0.0
- * @Description: TODO
- **/
 @ApiModel(description="subsessions")
 @Data
 @TableName(value = "subsessions")

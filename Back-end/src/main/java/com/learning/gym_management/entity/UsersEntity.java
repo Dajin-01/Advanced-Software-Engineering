@@ -13,12 +13,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-/** 
- * @Author: Chen Xingjian
- * @CreateDate: 2025-06-09 21:04:28
- * @Version: 1.0.0
- * @Description: TODO
- **/
 @ApiModel(description="users")
 @Data
 @TableName(value = "users")

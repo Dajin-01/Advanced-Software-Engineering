@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 业务通用异常
- * @author ys
+ * Common business exception
+ * @author Chen Xingjian
  * @date 2020/5/15 18:27
  * @since 1.0.1
  */

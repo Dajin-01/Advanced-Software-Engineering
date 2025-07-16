@@ -11,12 +11,6 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
-/** 
- * @Author: Chen Xingjian
- * @CreateDate: 2025-06-09 21:00:39
- * @Version: 1.0.0
- * @Description: TODO
- **/
 @ApiModel(description="devices")
 @Data
 @TableName(value = "devices")

@@ -45,9 +45,9 @@ public class AuthController {
         JcuAccountEntity jcuAccountEntity = new JcuAccountEntity();
         jcuAccountEntity.setAccountId(req.getUsername());
         jcuAccountEntity.setAccountPassword(req.getPassword());
-        // 1. 验证用户名和密码（此处用简单示例，实际应接数据库验证）
+        // 1. verify the login and password (via the database).
         if (jcuAccountEntityList.contains(jcuAccountEntity)) {
-            // 2. 登录成功，生成 JWT
+            // 2. login successfully and return token
             String token = jwtUtil.generateToken(req.getUsername());
             Map<String, String> result = new HashMap<>();
             result.put("token", token);
