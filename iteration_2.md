@@ -9,8 +9,21 @@ Checklist:
 * Total estimated amount of work: YY days
 
 User stories or tasks (see chapter 4):
-1. [user story or task title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+1. Title: Monitor User Registrations
+Priority: Medium
+
+Estimate: 2 days
+
+Description: As an administrator, I want to view a list of all registered gym users, including their names, contact information, and registration dates, so that I can verify membership eligibility, manage user records efficiently, and contact users if needed.
+
+2. Title: Track Gym Usage Statistics
+Priority: Low
+
+Estimate: 3 days
+
+Description: As an administrator, I want to view statistics on daily and weekly gym usage, such as the number of check-ins per time slot or per user, so that I can identify busy periods, monitor attendance trends, and make data-driven decisions for staffing or facility improvements.
+
+
 
 In progress:
 * Task-2 (developer name or initials), date started
