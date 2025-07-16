@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - JCU Gym</title>
+  <link rel="stylesheet" href="payment.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Gym Membership Payment</h2>
+    <form class="payment-form" onsubmit="event.preventDefault(); alert('Registration Complete!'); location.href='../login/login.html';">
+      <div class="row">
+        <div class="col">
+          <label>Term:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="term" value="1" required> One (1) Trimester</label>
+            <label><input type="radio" name="term" value="3"> Three (3) Trimesters</label>
+          </div>
+        </div>
+        <div class="col">
+          <label>Fee:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="fee" value="50" required> S$50</label>
+            <label><input type="radio" name="fee" value="100"> S$100</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Payment Type:</label>
+          <select name="paymentType" required>
+            <option value="">Select</option>
+            <option>Credit/Debit Card</option>
+            <option>Bank Transfer</option>
+            <option>PayPal</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Registration Complete</button>
+    </form>
+  </div>
+</body>
+</html>
