@@ -9,17 +9,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Data;
 
-@ApiModel(description="subsessions")
+@ApiModel(description="jcu_account")
 @Data
-@TableName(value = "subsessions")
-public class SubsessionsEntity implements Serializable {
+@TableName(value = "jcu_account")
+public class JcuAccountEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.INPUT)
+    @TableId(value = "account_id", type = IdType.INPUT)
     @ApiModelProperty(value="")
-    private String id;
+    private String accountId;
 
-    @TableField(value = "subsession")
+    @TableField(value = "account_password")
     @ApiModelProperty(value="")
-    private String subsession;
+    private String accountPassword;
 }

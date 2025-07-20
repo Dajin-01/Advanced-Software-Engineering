@@ -32,7 +32,7 @@ public class RegistrationController {
     @ApiOperation("create new membership")
     @PostMapping("/createMembership")
     public R createMembership(@RequestBody @Validated CreateMembershipBo createMembershipBo) throws MessagingException, IOException {
-        return R.ok(registrationService.createMemberhip(createMembershipBo));
+        return registrationService.createMemberhip(createMembershipBo);
     }
 
 }

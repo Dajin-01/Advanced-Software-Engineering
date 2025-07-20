@@ -30,10 +30,6 @@ import java.util.Map;
 @Api(tags = "Auth")
 public class AuthController {
 
-    private final Map<String, String> usersMap = new HashMap<String, String>() {{
-        put("jd100001", "123456");
-    }};
-
     @Autowired
     private JwtUtil jwtUtil;
 
@@ -47,22 +43,15 @@ public class AuthController {
     public R login(@RequestBody LoginRequest req) {
         List<JcuAccountEntity> jcuAccountEntityList = jcuAccountMapper.selectList(null);
         JcuAccountEntity jcuAccountEntity = new JcuAccountEntity();
-        jcuAccountEntity.setJcuId(req.getUsername());
-        jcuAccountEntity.setJcuPassword(req.getPassword());
-        // 1. 验证用户名和密码（此处用简单示例，实际应接数据库验证）
+        jcuAccountEntity.setAccountId(req.getUsername());
+        jcuAccountEntity.setAccountPassword(req.getPassword());
+        // 1. verify the login and password (via the database).
         if (jcuAccountEntityList.contains(jcuAccountEntity)) {
-            // 2. 登录成功，生成 JWT
+            // 2. login successfully and return token
             String token = jwtUtil.generateToken(req.getUsername());
             Map<String, String> result = new HashMap<>();
             result.put("token", token);
-            result.put("jcuId", jcuAccountEntity.getJcuId());
-            UsersEntity usersEntity = usersMapper.selectOne(new QueryWrapper<UsersEntity>()
-                    .eq("jcu_id", req.getUsername()));
-            if (usersEntity != null) {
-                result.put("userId", usersEntity.getId());
-            }else {
-                result.put("userId", "");
-            }
+            result.put("accountId", jcuAccountEntity.getAccountId());
             return R.ok(result);
         } else {
             return R.error("用户名或密码错误");

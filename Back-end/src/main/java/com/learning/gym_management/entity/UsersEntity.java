@@ -13,12 +13,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-/** 
- * @Author: Chen Xingjian
- * @CreateDate: 2025-06-09 21:04:28
- * @Version: 1.0.0
- * @Description: TODO
- **/
 @ApiModel(description="users")
 @Data
 @TableName(value = "users")
@@ -28,10 +22,6 @@ public class UsersEntity implements Serializable {
     @TableId(value = "id", type = IdType.INPUT)
     @ApiModelProperty(value="")
     private String id;
-
-    @TableField(value = "jcu_id")
-    @ApiModelProperty(value="")
-    private String jcuId;
 
     /**
      * 0-student, 1-staff
@@ -43,13 +33,6 @@ public class UsersEntity implements Serializable {
     @TableField(value = "user_name")
     @ApiModelProperty(value="")
     private String userName;
-
-    /**
-     * 0-trial, 1-one trimester, 2-three trimester
-     */
-    @TableField(value = "user_terms")
-    @ApiModelProperty(value="0-trial, 1-one trimester, 2-three trimester")
-    private Integer userTerms;
 
     /**
      * 0-male, 1-female

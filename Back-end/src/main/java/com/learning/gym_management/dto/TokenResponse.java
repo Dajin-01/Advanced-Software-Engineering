@@ -6,7 +6,7 @@ import lombok.Data;
  * @Author: Chen Xingjian
  * @CreateDate: 2025-06-10 19:17:01
  * @Version: 1.0.0
- * @Description: TODO
+ * @Description: TokenResponse
  **/
 @Data
 public class TokenResponse {

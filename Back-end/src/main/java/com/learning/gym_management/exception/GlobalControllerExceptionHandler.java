@@ -68,7 +68,7 @@ public class GlobalControllerExceptionHandler {
 
 	/**
 	 * 参数校验异常
-	 * <p> 表单提交时发生的参数绑定一场</p>
+	 * <p> 表单提交时发生的参数绑定异常</p>
 	 * @see javax.validation.constraints.NotBlank
 	 * @see javax.validation.constraints.NotNull
      * @date 2019/7/18 9:32
