@@ -166,12 +166,8 @@ public class BookingService {
      */
     private List<String> listNextSevenDays(Date date) {
         List<String> dateList = new ArrayList<>();
-        for (int i = 0; i < 7; i++) {
-            if (i == 0){
-                dateList.add(DateUtil.format(date, "yyyy-MM-dd"));
-            }else {
-                dateList.add(DateFormatUtil.format1(DateUtil.offsetDay(date, i)));
-            }
+        for (int i = 1; i <= 7; i++) {
+            dateList.add(DateFormatUtil.format1(DateUtil.offsetDay(date, i)));
         }
         return dateList;
     }

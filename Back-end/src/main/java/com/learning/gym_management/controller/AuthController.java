@@ -1,5 +1,6 @@
 package com.learning.gym_management.controller;
 
+import cn.hutool.json.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.learning.gym_management.dto.LoginRequest;
 import com.learning.gym_management.dto.R;
@@ -42,6 +43,7 @@ public class AuthController {
     @PostMapping("/login")
     public R login(@RequestBody LoginRequest req) {
         List<JcuAccountEntity> jcuAccountEntityList = jcuAccountMapper.selectList(null);
+        // System.out.println("调用开始");
         JcuAccountEntity jcuAccountEntity = new JcuAccountEntity();
         jcuAccountEntity.setAccountId(req.getUsername());
         jcuAccountEntity.setAccountPassword(req.getPassword());
@@ -52,6 +54,7 @@ public class AuthController {
             Map<String, String> result = new HashMap<>();
             result.put("token", token);
             result.put("accountId", jcuAccountEntity.getAccountId());
+            // System.out.println("调用成功");
             return R.ok(result);
         } else {
             return R.error("用户名或密码错误");
