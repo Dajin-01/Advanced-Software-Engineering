@@ -1,6 +1,7 @@
 # 1. Front-end
 ## Tools
 - Pycharm
+
 ## Languages
 - HTML
 - CSS
@@ -9,19 +10,28 @@
 # 2. Back-end
 ## Tools
 - Database: MySQL
-- Developing app: IDEA
-- Database management app: Navicat
-- Server connecting app: FinalShell
+- Developing app: Node.js + Express.js
+- Database management app: MySQL Workbench
+- Server connecting app: Terminal (curl, http requests)
 - API testing app: Postman
 
 ## Languages
-- Java (SprintBoot)
+- Node.js
+- JavaScript
 
-# 3. Cloud Service
-- AWS Cloud Service
+## Import Libraries
+- Express.js
+- mysql2
+- bcryptjs
+- jsonwebtoken
+- cors
+- dotenv
+- express-validator
+- helmet
+- morgan
 
-# 4. Version Control System
+# 3. Version Control System
 - Git
 
-# 5. Remote Repo
+# 4. Remote Repo
 - GitHub
