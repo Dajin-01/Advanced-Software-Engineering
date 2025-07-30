@@ -1,17 +1,27 @@
-1. Front-end: Languages
+1. Front-end
+# Tools
+- Pycharm
+# Languages
 - HTML
 - CSS
 - Javascript
 
 2. Back-end
-- Java (SprintBoot)
-- MySQL Database
+# Tools
+- Database: MySQL
 - Developing app: IDEA
 - Database management app: Navicat
 - Server connecting app: FinalShell
+- API testing app: Postman
 
-3. Softwares used
-- PyCharm
+# Languages
+- Java (SprintBoot)
 
-4. Cloud Service
+3. Cloud Service
 - AWS Cloud Service
+
+4. Version Control System
+- Git
+
+5. Remote Repo
+- GitHub
