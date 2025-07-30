@@ -45,7 +45,8 @@ Completed:
 * Task-2 Chen Xingjian(Back-end), date completed 22/06/2025 19:48
 ### Burn Down for iteration-1 (see chapter 4):
 Burn down Chart
-<img width="1580" height="980" alt="output" src="https://github.com/user-attachments/assets/a72e1b51-6b75-4473-9eb5-024b1278be4e" />
+
+<img width="400" height="200" alt="output" src="https://github.com/user-attachments/assets/a72e1b51-6b75-4473-9eb5-024b1278be4e" />
 
 Update this at least once per week
 * 4 weeks left, 10 days of estimated amount of work
