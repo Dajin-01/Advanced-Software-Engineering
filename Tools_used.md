@@ -6,6 +6,9 @@
 2. Back-end
 - Java (SprintBoot)
 - MySQL Database
+- Developing app: IDEA
+- Database management app: Navicat
+- Server connecting app: FinalShell
 
 3. Softwares used
 - PyCharm
