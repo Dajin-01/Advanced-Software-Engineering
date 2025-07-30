@@ -1,4 +1,4 @@
-1. Front-end
+1. Front-end: Languages
 - HTML
 - CSS
 - Javascript
