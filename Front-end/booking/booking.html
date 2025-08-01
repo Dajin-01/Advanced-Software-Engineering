@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings</title>
+  <link rel="stylesheet" href="../booking/booking.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <span class="title">Gym Slot Booking Form</span>
+      </div>
+      <nav class="nav">
+        <a href="../index/index.html">Home</a>
+        <a href="../booking/booking.html" class="active">Book Sessions</a>
+        <a href="../ai-trainer/ai-trainer.html">AI Trainer</a>
+        <a href="../contact/contact.html">Contact</a>
+        <!-- 로그인 상태에 따라 표시될 사용자 메뉴 -->
+        <div id="userMenu" class="user-menu" style="display: none;">
+          <a href="#" onclick="logout()" class="logout-link">Logout</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="booking-content">
+      <div class="content-wrapper">
+
+
+        <!-- 로그인된 경우: 예약 기록 -->
+        <div id="bookingHistory" class="booking-history" style="display: none;">
+          <div class="booking-header">
+            <h2>My Previous Bookings</h2>
+            <div class="booking-actions">
+              <button class="action-button" onclick="window.location.href='add-booking.html'">Add Booking</button>
+              <button class="action-button">Delete Booking</button>
+            </div>
+          </div>
+          <hr>
+          <table class="booking-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Booking Reference</th>
+                <th>User Name</th>
+                <th>Booking Date</th>
+                <th>Booking Time</th>
+                <th>Booked On</th>
+                <th>Booked by</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><strong>JYM2025100001</strong></td>
+                <td><em>Dajin Kim</em></td>
+                <td><strong>14-5-2025</strong></td>
+                <td><strong>09:00:00</strong></td>
+                <td><strong>2025-05-13 T14:53</strong></td>
+                <td><em>Dajin Kim</em></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><strong>JYM2025100002</strong></td>
+                <td><em>Dajin Kim</em></td>
+                <td><strong>30-5-2025</strong></td>
+                <td><strong>09:00:00</strong></td>
+                <td><strong>2025-05-29 T14:53</strong></td>
+                <td><em>Dajin Kim</em></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><strong>JYM2025100003</strong></td>
+                <td><em>Dajin Kim</em></td>
+                <td><strong>1-8-2025</strong></td>
+                <td><strong>07:00:00</strong></td>
+                <td><strong>2025-07-30 T12:02</strong></td>
+                <td><em>Dajin Kim</em></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="pagination">
+            <span>&lt;</span>
+            <span class="active-page">1</span>
+            <span>&gt;</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // 페이지 로드 시 로그인 상태 확인
+    document.addEventListener('DOMContentLoaded', function() {
+      checkLoginStatus();
+    });
+
+    // 로그인 상태 확인 함수
+    function checkLoginStatus() {
+      const token = localStorage.getItem('authToken');
+      const userName = localStorage.getItem('userName');
+
+      if (token && userName) {
+        // 로그인된 상태 - 예약 기록 표시
+        showBookingHistory();
+      } else {
+        // 로그인되지 않은 상태 - 로그인 페이지로 리다이렉트
+        window.location.href = '../login/login.html';
+      }
+    }
+
+    // 예약 기록 표시
+    function showBookingHistory() {
+      const bookingHistory = document.getElementById('bookingHistory');
+      const userMenu = document.getElementById('userMenu');
+
+      bookingHistory.style.display = 'block';
+      userMenu.style.display = 'inline-block';
+    }
+
+
+
+    // 로그아웃 함수
+    function logout() {
+      // 로컬 스토리지에서 사용자 정보 삭제
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userRole');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('userEmail');
+
+      // 페이지 새로고침하여 상태 업데이트
+      window.location.reload();
+    }
+  </script>
+  <script src="booking.js"></script>
+</body>
+</html>

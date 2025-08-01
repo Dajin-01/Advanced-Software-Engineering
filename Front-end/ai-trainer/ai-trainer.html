@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Trainer - Gym</title>
+  <link rel="stylesheet" href="ai-trainer.css" />
+  <link rel="stylesheet" href="../index/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <span class="title">AI Trainer</span>
+      </div>
+      <nav class="nav">
+        <a href="../index/index.html">Home</a>
+        <a href="#" onclick="handleBookSessions()">Book Sessions</a>
+        <a href="ai-trainer.html" class="active">AI Trainer</a>
+        <a href="../contact/contact.html">Contact</a>
+        <div id="userMenu" class="user-menu" style="display: none;">
+          <a href="#" onclick="logout()" class="logout-link">Logout</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <div class="chat-container">
+        <div class="chat-header">
+          <div class="ai-avatar">
+            <span class="ai-icon">🤖</span>
+          </div>
+          <div class="ai-info">
+            <h2>MyGym AI Trainer</h2>
+            <p>Ask me anything about workouts, exercises, and fitness!</p>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <!-- Welcome message -->
+          <div class="message ai-message">
+            <div class="message-content">
+              <div class="message-avatar">🤖</div>
+              <div class="message-text">
+                <p>Hello! I'm your MyGym AI Trainer! 🏋️‍♂️</p>
+                <p>I can help you with workouts, diet, muscle building, stretching, and all fitness-related questions!</p>
+                <p>Example questions:</p>
+                <ul>
+                  <li>"Recommend exercises for weight loss"</li>
+                  <li>"How to build arm muscles"</li>
+                  <li>"Stretches for back pain"</li>
+                  <li>"Beginner workout routine"</li>
+                </ul>
+                <p>Ask me anything! 💪</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-container">
+          <div class="chat-input-wrapper">
+            <input 
+              type="text" 
+              id="chatInput" 
+              placeholder="Ask me about workouts, exercises, or fitness..." 
+              class="chat-input"
+            />
+            <button id="sendButton" class="send-button">
+              <span class="send-icon">📤</span>
+            </button>
+          </div>
+          <div class="quick-questions">
+            <button class="quick-btn" onclick="askQuickQuestion('Recommend exercises for weight loss')">Weight Loss</button>
+            <button class="quick-btn" onclick="askQuickQuestion('How to build muscle')">Muscle Building</button>
+            <button class="quick-btn" onclick="askQuickQuestion('Beginner workout routine')">Beginner Routine</button>
+            <button class="quick-btn" onclick="askQuickQuestion('Stretching exercises')">Stretching</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // 페이지 로드 시 로그인 상태 확인
+    document.addEventListener('DOMContentLoaded', function() {
+      checkLoginStatus();
+    });
+
+    // 로그인 상태 확인 함수
+    function checkLoginStatus() {
+      const token = localStorage.getItem('authToken');
+      const userName = localStorage.getItem('userName');
+
+      if (token && userName) {
+        showLoggedInState();
+      } else {
+        showLoggedOutState();
+      }
+    }
+
+    // 로그인된 상태 표시
+    function showLoggedInState() {
+      const userMenu = document.getElementById('userMenu');
+      userMenu.style.display = 'inline-block';
+    }
+
+    // 로그아웃된 상태 표시
+    function showLoggedOutState() {
+      const userMenu = document.getElementById('userMenu');
+      userMenu.style.display = 'none';
+    }
+
+    // 로그아웃 함수
+    function logout() {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userRole');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('userEmail');
+      window.location.reload();
+    }
+
+    // Book Sessions 클릭 처리
+    function handleBookSessions() {
+      const token = localStorage.getItem('authToken');
+      const userName = localStorage.getItem('userName');
+
+      if (token && userName) {
+        // 로그인된 상태 - 예약 페이지로 이동
+        window.location.href = '../booking/booking.html';
+      } else {
+        // 로그인되지 않은 상태 - 로그인 페이지로 이동
+        window.location.href = '../login/login.html';
+      }
+    }
+  </script>
+  <script src="ai-trainer.js"></script>
+</body>
+</html> 
