@@ -47,7 +47,7 @@ const initializeDatabase = async () => {
         emergency_contact_number VARCHAR(20) NOT NULL,
         terms_accepted BOOLEAN DEFAULT FALSE,
         membership_fee DECIMAL(10,2) DEFAULT 0.00,
-        payment_type ENUM('monthly', 'yearly', 'none') DEFAULT 'none',
+        payment_type VARCHAR(50) DEFAULT 'none',
         is_active BOOLEAN DEFAULT TRUE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -71,6 +71,22 @@ const initializeDatabase = async () => {
       )
     `);
 
+    // Create bookings table
+    await connection.execute(`
+      CREATE TABLE IF NOT EXISTS bookings (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT NOT NULL,
+        booking_date DATE NOT NULL,
+        booking_time TIME NOT NULL,
+        equipment_type VARCHAR(100),
+        duration_minutes INT DEFAULT 60,
+        status ENUM('confirmed', 'pending', 'cancelled') DEFAULT 'pending',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+      )
+    `);
+
     // Create payments table
     await connection.execute(`
       CREATE TABLE IF NOT EXISTS payments (
@@ -85,6 +101,39 @@ const initializeDatabase = async () => {
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
       )
     `);
+
+    // Insert default admin user if not exists
+    const [adminUsers] = await connection.execute(
+      'SELECT id FROM users WHERE email = ?',
+      ['admin@jcu.edu.au']
+    );
+
+    if (adminUsers.length === 0) {
+      const bcrypt = require('bcryptjs');
+      const adminPasswordHash = await bcrypt.hash('admin123', 12);
+      
+      await connection.execute(`
+        INSERT INTO users (
+          user_role, full_name, email, password_hash, mobile_number,
+          gender, birthdate, emergency_contact_name, emergency_contact_number,
+          terms_accepted, is_active
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `, [
+        'admin',
+        'System Administrator',
+        'admin@jcu.edu.au',
+        adminPasswordHash,
+        '+61412345678',
+        'Other',
+        '1990-01-01',
+        'Emergency Contact',
+        '+61412345679',
+        true,
+        true
+      ]);
+      
+      console.log('✅ Default admin user created');
+    }
 
     console.log('✅ Database tables initialized successfully');
     connection.release();

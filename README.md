@@ -1,77 +1,188 @@
+# JCU Gym Management System
 
-How to edit this: test-2025
-* Option-1 (tested and worked ok): PyCharm supports editing of these .md files. Then you need to push to the main branch or make a pull request.
-* Option-2 (tested ok): Edit and commit it directly on github. Then any local repo copies will need to be "updated".
+A comprehensive gym management system built with Node.js backend and vanilla JavaScript frontend.
 
+## Features
 
-This a project assignment template for CP3407. 
-The following is the list of items, which are required to be completed.
+- User registration and authentication (Student/Staff/Admin)
+- Gym equipment booking system
+- Payment processing
+- Admin dashboard with statistics
+- Session management
+- Responsive web interface
 
-## Team
+## Prerequisites
 
-1. Dajin Kim
-2. Lin Pyae Htet
-3. Chen Xingjian
-4. Fan Yiqi
+Before running this application, make sure you have the following installed:
 
+- **Node.js** (v14 or higher)
+- **MySQL** (v8.0 or higher)
+- **Git**
 
-# Project planning BEFORE iteration-1, (see chapters 1-3)
+## Installation Guide
 
-## Project Overview
+### 1. Clone the Repository
 
-A website for "MyGym”: a platform focused on providing gym services to JCU students while JCU staffs manage bookings and their memberships. Students can register for membership on the website and book their gym sessions conveniently without having to go to the university. The website will also feature an AI-powered trainer that will improve students' workout experience. The website will have revenue generated through gym membership subscriptions.
+```bash
+git clone https://github.com/Dajin-01/Advanced-Software-Engineering.git
+cd Advanced-Software-Engineering
+```
 
-## Goals
-MyGym aims to revolutionize the gym experience for JCU students by providing a centralized online platform for booking facilities and accessing personalized fitness services. By leveraging AI technology, the platform will offer tailored exercise recommendations that align with each user’s goals and physical condition, helping them achieve better results safely and efficiently. MyGym will generate revenue through a subscription-based membership model, ensuring sustainability while maintaining a high level of service quality. 
+### 2. Database Setup
 
-## Team Roles
+#### Option A: Using MySQL Command Line
 
-Lin Pyae Htet - GUI, Front-end
+1. **Start MySQL server**
+2. **Login to MySQL:**
+   ```bash
+   mysql -u root -p
+   ```
+3. **Run the schema file:**
+   ```bash
+   source Back-end/database/schema.sql
+   ```
 
-Da Jin Kim - GUI, Front-end
+#### Option B: Using MySQL Workbench
 
-Chen Xingjian - Back-end, Cloud service like AWS
+1. Open MySQL Workbench
+2. Connect to your MySQL server
+3. Open the file `Back-end/database/schema.sql`
+4. Execute the script
 
-Fan Yiqi - Design, Document
+### 3. Environment Configuration
 
-Checklist/TODOs: 
-* Update the following during each week prac session
-* github entry timestamp is BEFORE the iteration-1
-* User stories are correct: see p39
-* Must have more user stories than fits into iterations 1 and 2. To practice the priority.
-* [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-* ...
+1. **Navigate to the backend directory:**
+   ```bash
+   cd Back-end
+   ```
 
-Total: YY days
+2. **Copy the environment template:**
+   ```bash
+   cp config.env.example config.env
+   ```
 
+3. **Edit the config.env file with your database credentials:**
+   ```env
+   # Database Configuration
+   DB_HOST=localhost
+   DB_USER=your_mysql_username
+   DB_PASSWORD=your_mysql_password
+   DB_NAME=jcu_gym_db
+   DB_PORT=3306
+   
+   # JWT Configuration
+   JWT_SECRET=your_secure_jwt_secret_here
+   
+   # Other configurations...
+   ```
 
-## Iteration 1 [duration 3-4 weeks], add your start and end dates 
+### 4. Install Dependencies
 
-* Goal is to have 2 iterations during a trimester of teaching.
-* Update the following during each week prac session
-* During pracs, you may experiment with using other github ways of tracking changes, e.g. via pull requests.
+```bash
+npm install
+```
 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+### 5. Start the Server
 
-Total: YY days
+```bash
+node server.js
+```
 
+The server will start on `http://localhost:8081`
 
-### Iteration 2 [duration 3-4 weeks], add your start and end dates
-Goal is to have 2 iterations during a trimester of teaching.
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+## Default Admin Account
 
-Total: YY days
+After running the database schema, you can login with the default admin account:
 
-### Not enough time/developers: 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+- **Email:** admin@jcu.edu.au
+- **Password:** admin123
 
-Total: YY days
+## Project Structure
 
-# Actual iterations
-1. [Iteration-1](./iteration_1.md)
-2. [Iteration-2](./iteration_2.md)
+```
+Advanced-Software-Engineering/
+├── Back-end/
+│   ├── config/
+│   │   ├── database.js
+│   │   └── config.env
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   └── adminController.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   └── validation.js
+│   ├── models/
+│   │   ├── User.js
+│   │   └── Booking.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── admin.js
+│   │   └── booking.js
+│   ├── database/
+│   │   └── schema.sql
+│   └── server.js
+├── Front-end/
+│   ├── admin/
+│   ├── booking/
+│   ├── login/
+│   ├── payment/
+│   ├── register/
+│   └── ...
+└── README.md
+```
+
+## API Endpoints
+
+### Authentication
+- `POST /api/registration/createMembership` - User registration
+- `POST /api/login` - User login
+- `GET /api/profile` - Get user profile
+- `PUT /api/profile` - Update user profile
+
+### Admin
+- `GET /api/admin/users` - Get all users
+- `GET /api/admin/stats` - Get usage statistics
+
+### Bookings
+- `GET /api/bookings` - Get user bookings
+- `POST /api/bookings` - Create new booking
+
+### Payments
+- `PUT /api/users/updatePayment` - Update payment information
+
+## Troubleshooting
+
+### Database Connection Issues
+
+1. **Check MySQL service is running**
+2. **Verify database credentials in config.env**
+3. **Ensure database and tables exist**
+4. **Check MySQL user permissions**
+
+### Port Already in Use
+
+If port 8081 is already in use, change the PORT in config.env:
+```env
+PORT=8082
+```
+
+### CORS Issues
+
+If you're running the frontend on a different port, update CORS_ORIGIN in config.env:
+```env
+CORS_ORIGIN=http://localhost:3001
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
 
 
