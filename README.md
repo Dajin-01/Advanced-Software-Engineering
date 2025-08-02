@@ -1,4 +1,4 @@
-# JCU Gym Management System
+# MY Gym Management System
 
 A comprehensive gym management system built with Node.js backend and vanilla JavaScript frontend.
 
@@ -19,18 +19,66 @@ Before running this application, make sure you have the following installed:
 - **MySQL** (v8.0 or higher)
 - **Git**
 
-## Installation Guide
+## Quick Start (Recommended)
 
-### 1. Clone the Repository
+### Option 1: Automated Installation
+
+**For macOS/Linux:**
+```bash
+git clone https://github.com/Dajin-01/Advanced-Software-Engineering.git
+cd Advanced-Software-Engineering
+chmod +x install.sh
+./install.sh
+```
+
+**For Windows:**
+```bash
+git clone https://github.com/Dajin-01/Advanced-Software-Engineering.git
+cd Advanced-Software-Engineering
+install.bat
+```
+
+### Option 2: Manual Installation
+
+#### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Dajin-01/Advanced-Software-Engineering.git
 cd Advanced-Software-Engineering
 ```
 
-### 2. Database Setup
+#### 2. Install Dependencies
 
-#### Option A: Using MySQL Command Line
+```bash
+npm run install-all
+```
+
+#### 3. Setup Database
+
+```bash
+npm run setup-db
+```
+
+#### 4. Configure Environment
+
+```bash
+cp Back-end/config.env.example Back-end/config.env
+# Edit Back-end/config.env if needed
+```
+
+#### 5. Start the Server
+
+```bash
+npm start
+```
+
+The server will start on `http://localhost:8081`
+
+## Manual Database Setup (Alternative)
+
+If the automated setup doesn't work, you can set up the database manually:
+
+### Option A: Using MySQL Command Line
 
 1. **Start MySQL server**
 2. **Login to MySQL:**
@@ -42,53 +90,30 @@ cd Advanced-Software-Engineering
    source Back-end/database/schema.sql
    ```
 
-#### Option B: Using MySQL Workbench
+### Option B: Using MySQL Workbench
 
 1. Open MySQL Workbench
 2. Connect to your MySQL server
 3. Open the file `Back-end/database/schema.sql`
 4. Execute the script
 
-### 3. Environment Configuration
+### Environment Configuration
 
-1. **Navigate to the backend directory:**
-   ```bash
-   cd Back-end
-   ```
+Edit `Back-end/config.env` with your database credentials:
 
-2. **Copy the environment template:**
-   ```bash
-   cp config.env.example config.env
-   ```
+```env
+# Database Configuration
+DB_HOST=localhost
+DB_USER=your_mysql_username
+DB_PASSWORD=your_mysql_password
+DB_NAME=jcu_gym_db
+DB_PORT=3306
 
-3. **Edit the config.env file with your database credentials:**
-   ```env
-   # Database Configuration
-   DB_HOST=localhost
-   DB_USER=your_mysql_username
-   DB_PASSWORD=your_mysql_password
-   DB_NAME=jcu_gym_db
-   DB_PORT=3306
-   
-   # JWT Configuration
-   JWT_SECRET=your_secure_jwt_secret_here
-   
-   # Other configurations...
-   ```
+# JWT Configuration
+JWT_SECRET=your_secure_jwt_secret_here
 
-### 4. Install Dependencies
-
-```bash
-npm install
+# Other configurations...
 ```
-
-### 5. Start the Server
-
-```bash
-node server.js
-```
-
-The server will start on `http://localhost:8081`
 
 ## Default Admin Account
 
@@ -96,6 +121,60 @@ After running the database schema, you can login with the default admin account:
 
 - **Email:** admin@jcu.edu.au
 - **Password:** admin123
+
+## Troubleshooting
+
+### Common Issues
+
+#### 1. Express Module Not Found
+```bash
+Error: Cannot find module './lib/express'
+```
+**Solution:**
+```bash
+cd Back-end
+rm -rf node_modules package-lock.json
+npm install
+```
+
+#### 2. MySQL Connection Failed
+```bash
+Error: connect ECONNREFUSED 127.0.0.1:3306
+```
+**Solutions:**
+- **macOS:** `brew services start mysql`
+- **Windows:** Start MySQL service from Services
+- **Linux:** `sudo systemctl start mysql`
+
+#### 3. Database Access Denied
+```bash
+Error: Access denied for user 'jcu_user'@'localhost'
+```
+**Solution:**
+```bash
+cd Back-end
+node scripts/setup-database.js
+```
+
+#### 4. Port Already in Use
+```bash
+Error: listen EADDRINUSE :::8081
+```
+**Solution:**
+- Change port in `Back-end/config.env`
+- Or kill the process using the port: `lsof -ti:8081 | xargs kill -9`
+
+### System Requirements
+
+- **Node.js:** v14 or higher
+- **MySQL:** v8.0 or higher
+- **npm:** v6.0 or higher
+
+### Supported Operating Systems
+
+- macOS (10.14 or higher)
+- Windows (10 or higher)
+- Linux (Ubuntu 18.04+, CentOS 7+)
 
 ## Project Structure
 
