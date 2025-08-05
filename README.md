@@ -150,10 +150,17 @@ Error: connect ECONNREFUSED 127.0.0.1:3306
 ```bash
 Error: Access denied for user 'jcu_user'@'localhost'
 ```
-**Solution:**
+**Solutions:**
 ```bash
-cd Back-end
-node scripts/setup-database.js
+# Method 1: Try enhanced database setup
+npm run setup-db
+
+# Method 2: Reset MySQL and setup again
+npm run fix-db
+
+# Method 3: Manual reset (if above methods fail)
+npm run reset-mysql
+npm run setup-db
 ```
 
 #### 4. Port Already in Use

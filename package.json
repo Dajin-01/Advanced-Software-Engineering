@@ -9,9 +9,18 @@
     "dev": "cd Back-end && npm run dev",
     "setup": "npm run install-all && npm run setup-db",
     "setup-db": "node Back-end/scripts/setup-database.js",
+    "reset-mysql": "node Back-end/scripts/reset-mysql.js",
+    "fix-db": "npm run reset-mysql && npm run setup-db",
     "test": "cd Back-end && npm test"
   },
-  "keywords": ["gym", "fitness", "management", "nodejs", "express", "mysql"],
+  "keywords": [
+    "gym",
+    "fitness",
+    "management",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
   "author": "JCU Gym Team",
   "license": "MIT",
   "engines": {
@@ -25,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/Dajin-01/Advanced-Software-Engineering/issues"
   },
-  "homepage": "https://github.com/Dajin-01/Advanced-Software-Engineering#readme"
-} 
+  "homepage": "https://github.com/Dajin-01/Advanced-Software-Engineering#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}

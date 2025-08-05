@@ -82,6 +82,13 @@ fi
 echo "🗄️  Setting up database..."
 cd Back-end
 node scripts/setup-database.js
+if [ $? -ne 0 ]; then
+    echo "⚠️  Database setup failed. Trying to reset MySQL..."
+    cd ..
+    npm run reset-mysql
+    cd Back-end
+    node scripts/setup-database.js
+fi
 cd ..
 
 echo ""

@@ -44,6 +44,13 @@ REM Setup database
 echo 🗄️  Setting up database...
 cd Back-end
 node scripts\setup-database.js
+if %errorlevel% neq 0 (
+    echo ⚠️  Database setup failed. Trying to reset MySQL...
+    cd ..
+    call npm run reset-mysql
+    cd Back-end
+    node scripts\setup-database.js
+)
 cd ..
 
 echo.
