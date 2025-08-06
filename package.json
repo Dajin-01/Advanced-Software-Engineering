@@ -1,0 +1,41 @@
+{
+  "name": "jcu-gym-management-system",
+  "version": "1.0.0",
+  "description": "JCU Gym Management System - Full Stack Application",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd Back-end && npm install",
+    "start": "cd Back-end && npm start",
+    "dev": "cd Back-end && npm run dev",
+    "setup": "npm run install-all && npm run setup-db",
+    "setup-db": "node Back-end/scripts/setup-database.js",
+    "reset-mysql": "node Back-end/scripts/reset-mysql.js",
+    "fix-db": "npm run reset-mysql && npm run setup-db",
+    "test": "cd Back-end && npm test"
+  },
+  "keywords": [
+    "gym",
+    "fitness",
+    "management",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "JCU Gym Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dajin-01/Advanced-Software-Engineering.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dajin-01/Advanced-Software-Engineering/issues"
+  },
+  "homepage": "https://github.com/Dajin-01/Advanced-Software-Engineering#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}

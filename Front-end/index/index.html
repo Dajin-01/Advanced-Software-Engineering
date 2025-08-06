@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to MyGym</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <span class="title">Welcome to MyGym</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="javascript:void(0)" onclick="handleBookSessions()">Book Sessions</a>
+        <a href="../ai-trainer/ai-trainer.html">AI Trainer</a>
+        <a href="../contact/contact.html">Contact</a>
+        <!-- 로그인 상태에 따라 표시될 사용자 메뉴 -->
+        <div id="userMenu" class="user-menu" style="display: none;">
+          <span id="userGreeting" class="user-greeting"></span>
+          <a href="#" onclick="logout()" class="logout-link">Logout</a>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="left">
+        <h1>Join Us for a Healthier Life at MyGym</h1>
+        <p class="desc">
+          Discover a vibrant fitness community and state-of-the-art equipment  <br>
+          all conveniently located on campus. Whether you're new to fitness or a seasoned athlete,<br>
+          our gym is your perfect place to get stronger, reduce stress, and enjoy every workout.
+        </p>
+        <div class="buttons" id="authButtons">
+          <button class="login" onclick="location.href='../login/login.html'">Login</button>
+          <button class="register" onclick="location.href='../register/user-type.html'">Register Now</button>
+        </div>
+      </section>
+      <section class="right">
+        <img src="../img/training.jpg" alt="Gym" class="gym-img"/>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // 페이지 로드 시 로그인 상태 확인
+    document.addEventListener('DOMContentLoaded', function() {
+      checkLoginStatus();
+    });
+
+    // 로그인 상태 확인 함수
+    function checkLoginStatus() {
+      const token = localStorage.getItem('authToken');
+      const userName = localStorage.getItem('userName');
+      const userRole = localStorage.getItem('userRole');
+
+      if (token && userName) {
+        // 로그인된 상태
+        showLoggedInState(userName, userRole);
+      } else {
+        // 로그인되지 않은 상태
+        showLoggedOutState();
+      }
+    }
+
+    // 로그인된 상태 표시
+    function showLoggedInState(userName, userRole) {
+      // 로그인/회원가입 버튼 숨기기
+      const authButtons = document.getElementById('authButtons');
+      authButtons.style.display = 'none';
+
+      // 네비게이션에 사용자 메뉴 표시
+      const userMenu = document.getElementById('userMenu');
+      userMenu.style.display = 'inline-block';
+    }
+
+    // 로그인되지 않은 상태 표시
+    function showLoggedOutState() {
+      // 로그인/회원가입 버튼 표시
+      const authButtons = document.getElementById('authButtons');
+      authButtons.style.display = 'flex';
+
+      // 사용자 메뉴 숨기기
+      const userMenu = document.getElementById('userMenu');
+      userMenu.style.display = 'none';
+    }
+
+    // Book Sessions 클릭 처리
+    function handleBookSessions() {
+      const token = localStorage.getItem('authToken');
+      const userName = localStorage.getItem('userName');
+
+      if (token && userName) {
+        // 로그인된 상태 - 예약 페이지로 이동
+        window.location.href = '../booking/booking.html';
+      } else {
+        // 로그인되지 않은 상태 - 로그인 페이지로 이동
+        window.location.href = '../login/login.html';
+      }
+    }
+
+    // 로그아웃 함수
+    function logout() {
+      // 로컬 스토리지에서 사용자 정보 삭제
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userRole');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('userEmail');
+
+      // 페이지 새로고침하여 상태 업데이트
+      window.location.reload();
+    }
+  </script>
+</body>
+</html>
