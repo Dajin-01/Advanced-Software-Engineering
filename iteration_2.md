@@ -16,12 +16,18 @@ Estimate: 2 days
 
 Description: As an administrator, I want to view a list of all registered gym users, including their names, contact information, and registration dates, so that I can verify membership eligibility, manage user records efficiently, and contact users if needed.
 
+<img width="1423" height="680" alt="스크린샷 2025-08-06 오후 12 09 49" src="https://github.com/user-attachments/assets/6648636c-4316-4f7d-a00b-773707703e62" />
+
+
 2. Title: Track Gym Usage Statistics
 Priority: Low
 
 Estimate: 3 days
 
 Description: As an administrator, I want to view statistics on daily and weekly gym usage, such as the number of check-ins per time slot or per user, so that I can identify busy periods, monitor attendance trends, and make data-driven decisions for staffing or facility improvements.
+
+<img width="1103" height="844" alt="스크린샷 2025-08-06 오후 12 12 45" src="https://github.com/user-attachments/assets/d0315b5e-1356-4f87-82e9-d4d940e63fce" />
+
 
 
 
