@@ -4,9 +4,9 @@ Checklist:
 1. github entry timestamps
 2. User stories are correct: see p39
 
-* Assumed Velocity FROM iteration-1: ?? 
-* Number of developers: ??
-* Total estimated amount of work: YY days
+* Assumed Velocity FROM iteration-1: 4 days/week
+* Number of developers: 4
+* Total estimated amount of work: 5 days
 
 User stories or tasks (see chapter 4):
 1. Title: Monitor User Registrations
@@ -30,13 +30,18 @@ In progress:
 * ...
 
 Completed:
-* Task-3 (developer name or initials), date completed
-* ...
+* Task-1 Kim Dajin (Front-end), date completed 25/06/2025 15:00
+* Task-1 Chen Xingjian (Back-end), date completed 25/06/2025 18:15
+* Task-1 Lin Pyae Htet (Front-end), date completed 27/06/2025 16:45
+* Task-2 Chen Xingjian (Back-end), date completed 29/06/2025 14:30
+* Task-2 Lin Pyae Htet (Front-end), date completed 01/07/2025 17:40
+* Task-2 Kim Dajin (Front-end), date completed 05/07/2025 10:00
 
 ### Burn Down for iteration-2 (see chapter 4):
 Update this at least once per week
-* 4 weeks left, xx days of estimated amount of work 
-* 2 weeks left, xx days
-* 1 weeks left, xx days
-* 0 weeks left, xx days
-* Actual Velocity: ?? 
+* 4 weeks left, 5 days of estimated amount of work
+* 3 weeks left, 1 days
+* 2 weeks left, 0 days
+* 1 weeks left, 0 days
+* 0 weeks left, 0 days
+* Actual Velocity: 2.5 days/week
