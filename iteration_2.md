@@ -8,6 +8,11 @@ Checklist:
 * Number of developers: 4
 * Total estimated amount of work: 5 days
 
+  
+Administration Account 
+	•	Email: admin@gym.com
+	•	Password: admin123
+ 
 User stories or tasks (see chapter 4):
 1. Title: Monitor User Registrations
 Priority: Medium
