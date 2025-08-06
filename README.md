@@ -8,7 +8,7 @@ This a project assignment template for CP3407.
 The following is the list of items, which are required to be completed.
 
 ## Team
-
+Practical Class A (Group 1)
 1. Dajin Kim
 2. Lin Pyae Htet
 3. Chen Xingjian
