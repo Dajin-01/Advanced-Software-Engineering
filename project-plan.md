@@ -10,12 +10,15 @@
 - Had some errors with integration
 - Database problems where we cannot send data from front-end to back-end
 - Github Environment setup took longer than expected for a team member, so other group member help him upload his work.
-- 
+  
 ## What Can We Improve??
 - Define clearer acceptance criteria and technical requirements in user stories.
 - Improve documentation on md files
 
 ## Completed User Stories
-- 
+- Edit Registration Details
+- Book Gym Sessions
+- Get Basic Workout Recommendation
+  
 ## Incomplete User Stories
-- 
+None
