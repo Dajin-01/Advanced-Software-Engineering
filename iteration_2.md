@@ -37,6 +37,8 @@ Completed:
 
 ### Burn Down for iteration-2 (see chapter 4):
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/22995b1a-4498-4fb3-97f7-77bb2db38d04" />
+
+
 Update this at least once per week
 * 4 weeks left, 5 days of estimated amount of work
 * 3 weeks left, 1 days
