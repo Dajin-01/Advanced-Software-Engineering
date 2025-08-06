@@ -1,4 +1,6 @@
+<img width="375" height="155" alt="Screenshot 2025-08-06 at 12 32 39 PM" src="https://github.com/user-attachments/assets/035d338d-5656-4e72-a492-9513884c5621" />
 # 1. Front-end
+
 ## Tools
 - Pycharm
 
