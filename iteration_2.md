@@ -28,12 +28,12 @@ Description: As an administrator, I want to view statistics on daily and weekly 
 In progress:
 
 Completed:
-* Task-1 Kim Dajin (Front-end), date completed 25/06/2025 15:00
-* Task-1 Chen Xingjian (Back-end), date completed 25/06/2025 18:15
-* Task-1 Lin Pyae Htet (Front-end), date completed 27/06/2025 16:45
-* Task-2 Chen Xingjian (Back-end), date completed 29/06/2025 14:30
-* Task-2 Lin Pyae Htet (Front-end), date completed 01/07/2025 17:40
-* Task-2 Kim Dajin (Front-end), date completed 05/07/2025 10:00
+* Task-1 Kim Dajin(Front-end), date completed 14/07/2025 15:00
+* Task-1 Chen Xingjian(Back-end), date completed 14/07/2025 18:15
+* Task-1 Lin Pyae Htet(Front-end), date completed 16/07/2025 16:45
+* Task-2 Chen Xingjian(Back-end), date completed 18/07/2025 14:30
+* Task-2 Lin Pyae Htet(Front-end), date completed 20/07/2025 17:40
+* Task-2 Kim Dajin(Front-end), date completed 24/07/2025 10:00
 
 ### Burn Down for iteration-2 (see chapter 4):
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/22995b1a-4498-4fb3-97f7-77bb2db38d04" />
