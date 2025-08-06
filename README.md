@@ -1,4 +1,4 @@
-# MY Gym Management System
+# JCU Gym Management System
 
 A comprehensive gym management system built with Node.js backend and vanilla JavaScript frontend.
 
@@ -19,66 +19,37 @@ Before running this application, make sure you have the following installed:
 - **MySQL** (v8.0 or higher)
 - **Git**
 
-## Quick Start (Recommended)
+## Installation Guide
 
-### Option 1: Automated Installation
-
-**For macOS/Linux:**
-```bash
-git clone https://github.com/Dajin-01/Advanced-Software-Engineering.git
-cd Advanced-Software-Engineering
-chmod +x install.sh
-./install.sh
-```
-
-**For Windows:**
-```bash
-git clone https://github.com/Dajin-01/Advanced-Software-Engineering.git
-cd Advanced-Software-Engineering
-install.bat
-```
-
-### Option 2: Manual Installation
-
-#### 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Dajin-01/Advanced-Software-Engineering.git
 cd Advanced-Software-Engineering
 ```
 
-#### 2. Install Dependencies
+### 2. Quick Setup (Recommended)
+
+Run the automatic setup script:
 
 ```bash
-npm run install-all
+./setup.sh
 ```
 
-#### 3. Setup Database
+This script will:
+- Check if Node.js and MySQL are installed
+- Create config.env from template
+- Install dependencies
+- Provide next steps
 
-```bash
-npm run setup-db
-```
+### 3. Manual Setup
 
-#### 4. Configure Environment
+#### Database Setup
 
-```bash
-cp Back-end/config.env.example Back-end/config.env
-# Edit Back-end/config.env if needed
-```
+#### Option A: Automatic Setup (Recommended)
+The application will automatically create the database and tables when you start the server for the first time. Just make sure your MySQL credentials are correct in `config.env`.
 
-#### 5. Start the Server
-
-```bash
-npm start
-```
-
-The server will start on `http://localhost:8081`
-
-## Manual Database Setup (Alternative)
-
-If the automated setup doesn't work, you can set up the database manually:
-
-### Option A: Using MySQL Command Line
+#### Option B: Manual Setup using MySQL Command Line
 
 1. **Start MySQL server**
 2. **Login to MySQL:**
@@ -90,36 +61,58 @@ If the automated setup doesn't work, you can set up the database manually:
    source Back-end/database/schema.sql
    ```
 
-### Option B: Using MySQL Workbench
+#### Option C: Using MySQL Workbench
 
 1. Open MySQL Workbench
 2. Connect to your MySQL server
 3. Open the file `Back-end/database/schema.sql`
 4. Execute the script
 
-### Environment Configuration
+#### Environment Configuration
 
-Edit `Back-end/config.env` with your database credentials:
+1. **Navigate to the backend directory:**
+   ```bash
+   cd Back-end
+   ```
 
-```env
-# Database Configuration
-DB_HOST=localhost
-DB_USER=your_mysql_username
-DB_PASSWORD=your_mysql_password
-DB_NAME=jcu_gym_db
-DB_PORT=3306
+2. **Copy the environment template:**
+   ```bash
+   cp config.env.example config.env
+   ```
 
-# JWT Configuration
-JWT_SECRET=your_secure_jwt_secret_here
+3. **Edit the config.env file with your database credentials:**
+   ```env
+   # Database Configuration
+   DB_HOST=localhost
+   DB_USER=your_mysql_username
+   DB_PASSWORD=your_mysql_password
+   DB_NAME=jcu_gym_db
+   DB_PORT=3306
+   
+   # JWT Configuration
+   JWT_SECRET=your_secure_jwt_secret_here
+   
+   # Other configurations...
+   ```
 
-# Other configurations...
+#### Install Dependencies
+
+```bash
+npm install
 ```
 
+#### Start the Server
+
+```bash
+node server.js
+```
+
+The server will start on `http://localhost:8081`
 ## Default Admin Account
 
 After running the database schema, you can login with the default admin account:
 
-- **Email:** admin@jcu.edu.au
+- **Email:** admin@gym.com
 - **Password:** admin123
 
 ## Troubleshooting

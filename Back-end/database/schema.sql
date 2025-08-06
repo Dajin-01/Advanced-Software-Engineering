@@ -83,7 +83,7 @@ INSERT INTO users (
 ) VALUES (
   'admin',
   'System Administrator',
-  'admin@jcu.edu.au',
+  'admin@gym.com',
   '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj3ZxQQxq3Ge',
   '+61412345678',
   'Other',
