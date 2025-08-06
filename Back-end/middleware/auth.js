@@ -1,59 +1,53 @@
-const { extractToken, verifyToken } = require('../utils/jwt');
+const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// Authentication middleware
+// Middleware to authenticate JWT token
 const authenticateToken = async (req, res, next) => {
-  try {
-    const token = extractToken(req);
-    
-    if (!token) {
-      return res.status(401).json({
-        code: 401,
-        msg: 'Access token required'
-      });
-    }
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
 
-    const decoded = verifyToken(token);
+  if (!token) {
+    return res.status(401).json({
+      success: false,
+      message: 'Access token required'
+    });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findById(decoded.userId);
     
     if (!user) {
       return res.status(401).json({
-        code: 401,
-        msg: 'User not found'
-      });
-    }
-
-    if (!user.is_active) {
-      return res.status(401).json({
-        code: 401,
-        msg: 'User account is deactivated'
+        success: false,
+        message: 'User not found'
       });
     }
 
     req.user = user;
     next();
   } catch (error) {
-    return res.status(401).json({
-      code: 401,
-      msg: 'Invalid or expired token'
+    return res.status(403).json({
+      success: false,
+      message: 'Invalid or expired token'
     });
   }
 };
 
-// Role-based authorization middleware
-const authorizeRole = (roles) => {
+// Middleware to authorize user roles
+const authorizeRoles = (...roles) => {
   return (req, res, next) => {
     if (!req.user) {
       return res.status(401).json({
-        code: 401,
-        msg: 'Authentication required'
+        success: false,
+        message: 'Authentication required'
       });
     }
 
     if (!roles.includes(req.user.user_role)) {
       return res.status(403).json({
-        code: 403,
-        msg: 'Insufficient permissions'
+        success: false,
+        message: 'Access denied. Insufficient permissions.'
       });
     }
 
@@ -63,5 +57,5 @@ const authorizeRole = (roles) => {
 
 module.exports = {
   authenticateToken,
-  authorizeRole
-}; 
+  authorizeRoles
+};

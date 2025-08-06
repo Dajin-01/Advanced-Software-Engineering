@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
-const { registrationValidation, loginValidation, handleValidationErrors } = require('../middleware/validation');
+const { registerValidation, loginValidation, handleValidationErrors } = require('../middleware/validation');
 const { authenticateToken } = require('../middleware/auth');
 
 // Registration endpoint
-router.post('/registration/createMembership', registrationValidation, handleValidationErrors, authController.register);
+router.post('/registration/createMembership', registerValidation, handleValidationErrors, authController.register);
 
 // Login endpoint
 router.post('/login', loginValidation, handleValidationErrors, authController.login);

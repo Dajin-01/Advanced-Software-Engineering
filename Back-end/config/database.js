@@ -26,11 +26,11 @@ const testConnection = async () => {
     
     // Test if database exists, if not create it
     try {
-      await connection.execute(`USE ${process.env.DB_NAME || 'jcu_gym_db'}`);
+      await connection.query(`USE ${process.env.DB_NAME || 'jcu_gym_db'}`);
     } catch (error) {
       console.log('📝 Creating database...');
-      await connection.execute(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME || 'jcu_gym_db'}`);
-      await connection.execute(`USE ${process.env.DB_NAME || 'jcu_gym_db'}`);
+      await connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME || 'jcu_gym_db'}`);
+      await connection.query(`USE ${process.env.DB_NAME || 'jcu_gym_db'}`);
       console.log('✅ Database created successfully');
     }
     
