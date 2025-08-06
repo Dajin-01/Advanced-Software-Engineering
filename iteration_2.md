@@ -10,7 +10,9 @@ Checklist:
 
   
 Administration Account 
+
 	•	Email: admin@gym.com
+ 
 	•	Password: admin123
  
 User stories or tasks (see chapter 4):
