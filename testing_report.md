@@ -1,7 +1,46 @@
-Home page：
+Home Page Testing Summary
+Page Load: The homepage loads quickly and without errors.
+
+Design & Layout:
+
+The page features a colorful and visually engaging design.
+
+Multiple images are displayed correctly and enhance the user experience.
+
+Content: Clear and informative introductions are included, effectively explaining the purpose of the site or service.
+
+Navigation: All navigation links (e.g., to Booking, AI Trainer, Contact) are functional and lead to the correct pages.
+
+User Experience: The overall layout is intuitive and inviting for first-time users.
+
+Conclusion:
+The Home page is well-designed and fully functional. It effectively uses visual elements and text to introduce the site, providing a positive first impression.
+
+Booking Session Page Testing Summary
+Page Load: The Booking page loads properly on all tested devices.
+
+Functionality (Initial Issue):
+
+Initially, only Dajin's computer was able to access the booking functionality successfully.
+
+Other users experienced issues with registration and login, possibly due to a database connection or configuration issue.
+
+Issue Resolution:
+
+The issue was investigated and resolved.
+
+After the fix, all users were able to register, log in, and access the booking feature as expected.
+
+Current Status:
+
+Registration and login now function correctly across devices.
+
+Booking functionality is accessible to all users.
+
+Conclusion:
+Although there was an initial database-related issue affecting some users' ability to register and log in, the problem has been resolved. The Booking page is now fully functional for all users.
 
 
-Booking seession:
 
 
 AI Trainer Page Testing Summary：
