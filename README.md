@@ -27,7 +27,7 @@ MyGym aims to revolutionize the gym experience for JCU students by providing a c
 
 Lin Pyae Htet - GUI, Front-end
 
-Da Jin Kim - GUI, Front-end
+Da Jin Kim - GUI, Front-end, Back-end
 
 Chen Xingjian - Back-end, Cloud service like AWS
 
@@ -41,30 +41,56 @@ Checklist/TODOs:
 * 
 
 
-## Iteration 1 [duration 3-4 weeks], add your start and end dates 
+## Iteration 1 [duration 3-4 weeks], 06/06/2025 - 22/06/2025
 
-* Goal is to have 2 iterations during a trimester of teaching.
-* Update the following during each week prac session
-* During pracs, you may experiment with using other github ways of tracking changes, e.g. via pull requests.
+1. Title: Edit Registration Details
 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+   Priority: High
 
-Total: YY days
+   Estimate: 3 day
+
+   Description: As a gym customer, I want to edit my registration details online      so that I can update my information without asking the staff directly.
 
 
-### Iteration 2 [duration 3-4 weeks], add your start and end dates
+2. Title: Book Gym Sessions
+
+   Priority: High
+
+   Estimate: 5 days
+
+   Description: As a gym customer, I want to book gym sessions online so that I       can reserve my preferred time slot, avoid overcrowding, and plan my day without    visiting or calling the gym.
+
+
+3. Title: Get Basic Workout Recommendation
+   Priority: Low
+
+   Estimate: 2 days
+
+   Description: As a gym user, I want to receive a simple workout plan based on my    selected goal (e.g. weight loss or muscle gain), so that I can follow a basic      routine without needing expert help.
+
+Total: 10 days
+
+
+### Iteration 2 [duration 3-4 weeks], 18/07/2025 - 03/08/2025
 Goal is to have 2 iterations during a trimester of teaching.
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+1. Title: Monitor User Registrations
+   Priority: Medium
+    
+   Estimate: 2 days
+    
+   Description: As an administrator, I want to view a list of all registered gym      users, including their names, contact information, and registration dates, so      that I can verify membership eligibility, manage user records efficiently,         and contact users if needed.
 
-Total: YY days
+2. Title: Track Gym Usage Statistics
+   Priority: Low
 
-### Not enough time/developers: 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+   Estimate: 3 days
 
-Total: YY days
+   Description: As an administrator, I want to view statistics on daily and weekly    gym usage, such as the number of check-ins per time slot or per user, so that I    can identify busy periods, monitor attendance trends, and make data-driven         decisions for staffing or facility improvements.
+
+Total: 5 days
+
+
+Total: 15 days
 
 # Actual iterations
 1. [Iteration-1](./iteration_1.md)
