@@ -1,4 +1,4 @@
-# Initial Prototypes
+# Initial Prototypes (Wireframe)
 Firstly, before we started the coding process, we decided to come up with design ideas for our websites. 
 Here are some of the prototypes that we did:
 <img width="2175" height="2314" alt="website prototypes drawio" src="https://github.com/user-attachments/assets/cb7fa54e-781c-431b-ad26-107bfabbb3e7" />
