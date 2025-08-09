@@ -3,6 +3,20 @@ Firstly, before we started the coding process, we decided to come up with design
 Here are some of the prototypes that we did:
 <img width="2175" height="2314" alt="website prototypes drawio" src="https://github.com/user-attachments/assets/cb7fa54e-781c-431b-ad26-107bfabbb3e7" />
 
+### Landing page
+Users can get some short information on what the website is about and start right away by creating an account or logging in to start the booking process.
+
+
+### Booking pages
+Before you can start booking, users need to login with their accounts. On that page, a short description of the booking process will be explained. After you login, you can add booking or see previous bookings you did with all types of information (e.g., Booking Reference, date, etc...)
+
+
+### AI Trainer page
+In this page, users can use the AI to recommend workout plans or ask information about the gym. The AI will be trained to give personalized information based on the prompt they give.
+
+
+### Contact Page
+Users will be able to find the necessary contact information here. 
 
 # Figma Prototypes
 Then, we improved our designs more using Figma to get a **realistic** prototype we can use before we actually start coding.
