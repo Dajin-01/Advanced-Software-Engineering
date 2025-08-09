@@ -5,7 +5,7 @@ Here are some of the prototypes that we did:
 
 
 # Figma Prototypes
-Then, we improved our designs more using Figma to get a realistic prototype we can use before we actually start coding.
+Then, we improved our designs more using Figma to get a **realistic** prototype we can use before we actually start coding.
 Here are some of the figma prototypes:
 <img width="908" height="607" alt="Screenshot 2025-08-09 at 3 19 32 PM" src="https://github.com/user-attachments/assets/82fbd191-15b7-4449-8644-2ad3a8d80cc3" />
 <img width="984" height="222" alt="Screenshot 2025-08-09 at 3 19 40 PM" src="https://github.com/user-attachments/assets/99af5e96-ef0a-4e6c-a6dd-aef234dfce92" />
