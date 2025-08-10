@@ -1,4 +1,4 @@
-<img width="698" height="239" alt="database-testing" src="https://github.com/user-attachments/assets/082e581c-deda-4fd8-9cd9-d684ed7bb7da" /># My Gym Web Application Testing Report
+# My Gym Web Application Testing Report
 
 ## Executive Summary
 
