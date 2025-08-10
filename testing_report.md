@@ -1,4 +1,4 @@
-# My Gym Web Application Testing Report
+<img width="698" height="239" alt="database-testing" src="https://github.com/user-attachments/assets/082e581c-deda-4fd8-9cd9-d684ed7bb7da" /># My Gym Web Application Testing Report
 
 ## Executive Summary
 
@@ -66,6 +66,8 @@ This comprehensive testing report evaluates the "My Gym" web application across 
 - ✅ **Local Development:** Database connections worked perfectly on developer's laptop
 - ❌ **Multi-user Environment:** Other users experienced database connection failures after cloning from GitHub
 - 🔍 **Affected Features:** Login and booking functionality completely inaccessible for external users
+- 
+- <img width="698" height="239" alt="database-testing" src="https://github.com/user-attachments/assets/bb9d2cd7-8b51-4304-b112-e46b61210676" />
 
 ### 3.2 Root Cause Analysis
 **Technical Investigation:**
