@@ -32,24 +32,30 @@ This comprehensive testing report evaluates the "My Gym" web application across 
 - ✅ **Navigation:** All links functional (Booking, AI Trainer, Contact, Login)
 - ✅ **Content:** Clear service descriptions and readable typography
 - ✅ **Image rendering:** Verified (e.g., training.jpg)
+<img width="1401" height="603" alt="home-testing" src="https://github.com/user-attachments/assets/a5059525-9642-41a2-85f5-5a45a4fd791c" />
 
 ### 2.2 Booking System
 - ✅ **Booking creation & cancellation** (API tested)
 - ✅ **Validations** for overlapping slots, trainer availability
 - ✅ **Auth enforcement:** JWT token required
+<img width="1332" height="680" alt="booking -testing 1" src="https://github.com/user-attachments/assets/95ea40aa-a8ce-4c42-aa42-4ebd5aab62eb" />
+<img width="1401" height="410" alt="booking -testing 2" src="https://github.com/user-attachments/assets/cc5f5eab-10f2-447b-a986-f491d7a14863" />
 
 ### 2.3 AI Trainer Feature
 - ✅ **Handles diverse fitness questions** (beginner to intermediate)
 - ✅ **Conversational context maintained**
 - ✅ **Responses returned within 3s average**
+<img width="1397" height="613" alt="admin_testing" src="https://github.com/user-attachments/assets/6bc4e18c-6735-45f4-a42e-f890001ef8e3" />
 
 ### 2.4 Admin Panel
 - ✅ **Role-based access** for viewing user list
 - ✅ **API:** GET /api/admin/users secured via middleware
+<img width="1397" height="613" alt="AI-trainer - testing" src="https://github.com/user-attachments/assets/7b03f260-d922-4ae7-a5f6-5e614fca85a1" />
 
 ### 2.5 Payment & Contact Pages
 - ✅ **Payment page** available and auth-protected
 - ✅ **Contact page** is static (no form submission yet)
+<img width="1403" height="470" alt="contact-testing" src="https://github.com/user-attachments/assets/25e0f876-8586-4cd1-a8ab-f033ce66626e" />
 
 ---
 
