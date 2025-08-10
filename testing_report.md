@@ -82,6 +82,8 @@ This comprehensive testing report evaluates the "My Gym" web application across 
    - Standardized MySQL connection parameters
    - Added comprehensive error handling for connection failures
    - Implemented connection retry logic
+   - <img width="492" height="81" alt="스크린샷 2025-08-10 오후 5 54 24" src="https://github.com/user-attachments/assets/40e05dc5-350a-4ecc-84ff-7e626f9a32de" />
+
 
 2. ✅ **Environment Setup Documentation:**
    - Created detailed setup instructions for new users
